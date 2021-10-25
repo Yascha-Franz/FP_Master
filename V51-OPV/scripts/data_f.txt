@@ -1,0 +1,3 @@
+# f = 1.149 MHz, C = 100 nF, R_3 = 10*10**3 Ohm, R_1 = 100 Ohm,  R_2 = 220*10**3 Ohm
+# f_dreieck in MHz
+1.1236

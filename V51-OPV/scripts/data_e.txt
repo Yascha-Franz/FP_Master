@@ -1,0 +1,3 @@
+# R_1 = 100 Ohm, R_2 = 220*10**3 Ohm, U = 2V
+# U_kipp in mV, aufsteigend       U_kipp in mV, absteigend
+-230                                    87
