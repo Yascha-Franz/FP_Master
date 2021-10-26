@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021)  (format=lualatex 2021.5.23)  26 OCT 2021 17:08
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021)  (format=lualatex 2021.5.23)  26 OCT 2021 18:25
  restricted system commands enabled.
 **finish.tex
 (./finish.tex
@@ -543,12 +543,12 @@ braces):
 >  {german/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {german/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for german
+(polyglossia)            loader	loadhyph-de-1901.tex
 (polyglossia)            righthyphenmin	2
 (polyglossia)            lefthyphenmin	2
+(polyglossia)            synonyms	
 (polyglossia)            patterns	hyph-de-1901.pat.txt
-(polyglossia)            loader	loadhyph-de-1901.tex
-(polyglossia)            hyphenation	
-(polyglossia)            synonyms	 on input line 10
+(polyglossia)            hyphenation	 on input line 10
 Module polyglossia Info: Language german was not yet loaded; created with id 2 o
 n input line 10
 Package polyglossia Info: Option: German, spelling=new.
@@ -1810,12 +1810,12 @@ LaTeX Info: Redefining \rmfamily on input line 26.
 LaTeX Info: Redefining \sffamily on input line 26.
 LaTeX Info: Redefining \ttfamily on input line 26.
 Module polyglossia Info: Language data for ngerman
+(polyglossia)            loader	loadhyph-de-1996.tex
 (polyglossia)            righthyphenmin	2
 (polyglossia)            lefthyphenmin	2
+(polyglossia)            synonyms	
 (polyglossia)            patterns	hyph-de-1996.pat.txt
-(polyglossia)            loader	loadhyph-de-1996.tex
-(polyglossia)            hyphenation	
-(polyglossia)            synonyms	 on input line 26
+(polyglossia)            hyphenation	 on input line 26
 Module polyglossia Info: Language ngerman was not yet loaded; created with id 4 
 on input line 26
 )
@@ -2088,15 +2088,20 @@ Overfull \hbox (39.45334pt too wide) in paragraph at lines 203--204
  [][] 
  []
 
-) (./content/aufbau.tex) (./content/durchfuehrung.tex)
-(./content/ergebnisse.tex) (./content/auswertung.tex [8<./ressources/figure_07.p
-ng>]
-<build/plot.pdf, id=174, 417.7206pt x 258.0049pt>
+) (./content/aufbau.tex) (./content/durchfuehrung.tex
+<ressources/aufbau.JPG, id=167, 4047.12pt x 3035.34pt>
+File: ressources/aufbau.JPG Graphic file (type jpg)
+<use ressources/aufbau.JPG>
+Package luatex.def Info: ressources/aufbau.JPG  used on input line 9.
+(luatex.def)             Requested size: 121.40836pt x 91.05626pt.
+) [8<./ressources/figure_07.png>] (./content/ergebnisse.tex) (./content/auswert
+ung.tex [9<./ressources/aufbau.JPG>]
+<build/plot.pdf, id=188, 417.7206pt x 258.0049pt>
 File: build/plot.pdf Graphic file (type pdf)
 <use build/plot.pdf>
 Package luatex.def Info: build/plot.pdf  used on input line 14.
 (luatex.def)             Requested size: 417.71957pt x 258.00426pt.
-) (./content/diskussion.tex) [9<./build/plot.pdf>]
+) (./content/diskussion.tex) [10<./build/plot.pdf>]
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2131,20 +2136,20 @@ braces):
 >  {german/babelname}  =>  {ngerman}
 >  {german/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {german/Localnumeral}  =>  {polyglossia@C@localnumeral}.
- [10]
+ [11]
 (./build/finish.aux
 LaTeX Info: Redefining \rmfamily on input line 26.
 LaTeX Info: Redefining \sffamily on input line 26.
 LaTeX Info: Redefining \ttfamily on input line 26.
 )
 Package rerunfilecheck Info: File `finish.aux' has not changed.
-(rerunfilecheck)             Checksum: E511984FA603DB7E3060D6A2A936A124;18187.
+(rerunfilecheck)             Checksum: 84BAC875D76066F8ECE11FD8AC35A9C8;18643.
 
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `finish.toc' has not changed.
-(rerunfilecheck)             Checksum: D0815C28CE292B06C65F56204A163349;2592.
+(rerunfilecheck)             Checksum: A1D8013E6FA031408AE77F32C245D15D;2593.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                finish
@@ -2156,14 +2161,14 @@ Package logreq Info: Writing requests to 'finish.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 48705 strings out of 478378
+ 48726 strings out of 478378
  100000,2373549 words of node,token memory allocated
- 716 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 21 attribute, 78 glue_spec
-, 21 attribute_list, 2 write, 5 pdf_action nodes
-   avail lists: 1:1,2:673,3:307,4:135,5:422,6:69,7:6226,8:120,9:514,10:22,11:786
+ 726 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 22 attribute, 78 glue_spec
+, 22 attribute_list, 2 write, 6 pdf_action nodes
+   avail lists: 1:2,2:672,3:318,4:136,5:422,6:70,7:6227,8:122,9:514,10:22,11:786
 
- 67033 multiletter control sequences out of 65536+600000
+ 67042 multiletter control sequences out of 65536+600000
  117 fonts using 40815963 bytes
  113i,12n,118p,10619b,2933s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.ot
@@ -2179,10 +2184,10 @@ public/lm-math/latinmodern-math.otf></usr/local/texlive/2021/texmf-dist/fonts/op
 entype/public/lm/lmroman10-regular.otf></usr/local/texlive/2021/texmf-dist/fonts
 /opentype/public/lm/lmroman12-regular.otf></usr/local/texlive/2021/texmf-dist/fo
 nts/opentype/public/lm/lmsans10-bold.otf>
-Output written on finish.pdf (10 pages, 142616 bytes).
+Output written on finish.pdf (11 pages, 2647047 bytes).
 
-PDF statistics: 364 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 131072)
+PDF statistics: 381 PDF objects out of 1000 (max. 8388607)
+ 300 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 131072)
  176 words of extra memory for PDF output out of 10000 (max. 100000000)
 

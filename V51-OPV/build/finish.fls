@@ -636,6 +636,10 @@ INPUT ./content/aufbau.tex
 INPUT ./content/aufbau.tex
 INPUT ./content/durchfuehrung.tex
 INPUT ./content/durchfuehrung.tex
+INPUT ./ressources/aufbau.JPG
+INPUT ./ressources/aufbau.JPG
+INPUT ./ressources/aufbau.JPG
+INPUT ./ressources/aufbau.JPG
 INPUT ./content/ergebnisse.tex
 INPUT ./content/ergebnisse.tex
 INPUT ./content/auswertung.tex

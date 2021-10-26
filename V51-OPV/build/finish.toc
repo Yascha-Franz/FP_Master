@@ -34,12 +34,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Durchführung}{8}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Ergebnisse}{8}{section.6}%
+\contentsline {section}{\numberline {6}Ergebnisse}{9}{section.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Auswertung}{8}{section.7}%
+\contentsline {section}{\numberline {7}Auswertung}{9}{section.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Diskussion}{9}{section.8}%
+\contentsline {section}{\numberline {8}Diskussion}{10}{section.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\nonumberline Literatur}{10}{section*.12}%
+\contentsline {section}{\nonumberline Literatur}{11}{section*.13}%
 \defcounter {refsection}{0}\relax 
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

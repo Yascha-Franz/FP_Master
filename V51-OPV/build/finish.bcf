@@ -2371,6 +2371,7 @@
     <bcf:citekey order="23">sample</bcf:citekey>
     <bcf:citekey order="24">sample</bcf:citekey>
     <bcf:citekey order="25">sample</bcf:citekey>
+    <bcf:citekey order="26">datenblatt</bcf:citekey>
     <bcf:citekey order="0" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
