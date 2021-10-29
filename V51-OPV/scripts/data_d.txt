@@ -1,4 +1,4 @@
-# Umkehr - Integrator
+# Umkehr - Differenzierer
 # f in Hz,           U_A in V 
 100                     1.67
 200                     1.69
