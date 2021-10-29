@@ -5,11 +5,27 @@ from scipy.optimize import curve_fit
 def plotfit(x,y,f,savepath,slice_=slice(0,None),yerr=None, p0=None, save=True, color='k', label='Messwerte'):
     colors = ['k', 'b', 'g', 'r', 'y']
     if (np.size(x[0])>1):
-        param, error = plotfit(x[0],y[0],f,savepath,slice_=slice_,yerr=yerr[0], p0=p0, save = False, color=colors[0], label = label[0])
+        if yerr==None:
+            yerr_=None
+        else:
+            yerr_=yerr[0]
+        if label=='Messwerte':
+            label_ = label
+        else:
+            label_ = label[0]
+        param, error = plotfit(x[0],y[0],f,savepath,slice_=slice_,yerr=yerr_, p0=p0, save = False, color=colors[0], label = label_)
         params = [param]
         errors = [error]
         for i in range(1,np.shape(x)[0]):
-            param, error = plotfit(x[i],y[i],f,savepath,slice_=slice_,yerr=yerr[i], p0=p0, save = False, color=colors[i], label = label[i])
+            if yerr==None:
+                yerr_=None
+            else:
+                yerr_=yerr[i]
+            if label=='Messwerte':
+                label_ = label
+            else:
+                label_ = label[i]
+            param, error = plotfit(x[i],y[i],f,savepath,slice_=slice_,yerr=yerr_, p0=p0, save = False, color=colors[i], label = label_)
             params = np.append(params, [param], axis = 0)
             errors = np.append(errors, [error], axis = 0)
     else:
