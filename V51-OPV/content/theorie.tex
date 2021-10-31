@@ -11,7 +11,7 @@ Mitkopplung. Die Funktionsprinzipien dieser Schaltungen werden für exemplarisch
 Schaltungen erläutert.
 \subsubsection{Eigenschaften idealer Operationsverstärker}
 Ideale Operationsverstärker kennzeichnen sich dadurch aus, dass ihre
-Leerlaufverstärkung $\frac{U_A}{U_E}$ als unendlich groß angenommen wird und
+Leerlaufverstärkung $V = \frac{U_A}{U_E}$ als unendlich groß angenommen wird und
 dass kein Strom in den Operationsverstärker hineinfließen kann, da sein
 Eingangswiderstand unendlich groß ist. Ferner verschwindet der
 Ausgangswiderstand eines Operationsverstärkers und seine Übertragungsbandbreite
@@ -31,15 +31,18 @@ zulässigen Spannungsintervall (bauartbedingt) liegt. Aufgrund der hohen
 Verstärkung liegt die Spannungsdifferenz zwischen $U_P$ und $U_N$ meist im
 Bereich einiger Millivolt, eine höhere Spannungsdifferenz führt dann nicht
 zu größeren Verstärkungen, sondern die Verstärkung durch den Operationsverstärker
-geht in einen Bereich der Sättigung, wie in \autoref{fig:01} dargestellt \cite{hs-fulda}.
+geht in einen Bereich der Sättigung, wie in Abbildung \ref{fig:01} dargestellt ist
+\cite{hs-fulda}. \\
+\FloatBarrier
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{ressources/figure_01.png}
+  \includegraphics[scale=0.8]{ressources/figure_01.png}
   \caption{Verstärkungskennlinie für idealen und realen Operationsverstärker. $U_\text{Doffset}$
   kennzeichnet die Eingangs-Offsetspannung, $U_\text{Du}$ und $U_\text{Do}$ kennzeichnen
   die untere und obere Grenze des linearen Verstärkungsbereichs \cite{elektrotechnik}.}
   \label{fig:01}
 \end{figure}
+\FloatBarrier
 \noindent Die Aussteuergrenze (Sättigungsbereich) liegt etwa $\SI{1}{\volt}$
 unterhalb der Betriebsspannung $U_B$ des Operationsverstärkers \cite{federau}, der
 lineare Bereich damit zwischen
@@ -47,10 +50,10 @@ lineare Bereich damit zwischen
   - U_B < U_A < + U_B,
   \label{eqn:02}
 \end{align}
-\noindent wobei die Ausgangsspannung $U_A$ nicht derjenigen in \autoref{fig:01}
+\noindent wobei die Ausgangsspannung $U_A$ nicht derjenigen in Abbildung \ref{fig:01}
 entspricht. \\
 \newline
-\noindent Das Schaltsymbol eines Operationsverstärkers ist in \autoref{fig:02}
+\noindent Das Schaltsymbol eines Operationsverstärkers ist in Abbildung \ref{fig:02}
 dargestellt. Wenngleich ein Operationsverstärker eine Vielzahl an
 Anschlusskontakten besitzt, sind im Schaltzeichen lediglich der
 invertierende Eingang $(-)$, der nicht-invertierende Eingang $(+)$ sowie der
@@ -92,49 +95,53 @@ getroffen, gilt die Relation
 Ein invertierender Linearverstärker arbeitet mit einer Gegenkopplung, welche
 sicherstellen soll, dass die Verstärkung unverzerrt ist. Dies wird durch eine
 Rückführung des Ausgangssignals auf den Signaleingang erreicht. \\
-Abbildung \autoref{fig:03} zeigt die Schaltskizze eines invertierenden
-Linearverstärkers.
+Abbildung \ref{fig:03} zeigt die Schaltskizze eines invertierenden
+Linearverstärkers. \\
+\FloatBarrier
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{ressources/figure_03.png}
+  \includegraphics[scale=0.7]{ressources/figure_03.png}
   \caption{Schaltskizze eines invertierenden Linearverstärkers \cite{sample}.}
   \label{fig:03}
 \end{figure}
+\FloatBarrier
 \noindent Eine am invertierenden Verstärker anliegende, positive Eingangsspannung
-führt zu einer negativen Ausgangsspannung am Ausgang, welche über den Widerstand
+führt zu einer negativen Ausgangsspannung, welche über den Widerstand
 $R_2$ auf den invertierenden Eingang des Operationsverstärkers zurückgeführt
-wird und auf diese Weise die Wirkung der positiven Eingangsspannung geschwächt.
+wird und auf diese Weise die Wirkung der positiven Eingangsspannung schwächt.
 Der Liegt keine Eingangsspannung an, ist auch keine Ausgangsspannung oder
 Differenzspannung messbar. Wird die Eingangsspannung erhöht, reagiert die Schaltung
 auf den Signaleingang. Durch die Spannungsaufteilung auf die in Reihe
 geschalteten Widerstände resultiert eine Differenzspannung, welche den
 Operationsverstärker an die negative Aussteuerungsgrenze bewegt. Je mehr sich
 der Operationsverstärker seiner Aussteuerungsgrenze nähert, desto geringer wird
-die Differenzspannung an seinen Eingängen Durch die Gegenkopplung beschränkt sich
+die Differenzspannung an seinen Eingängen. Durch die Gegenkopplung beschränkt sich
 der Operationsverstärker in seiner Verstärkungswirkung selbst ab.
 Mathematisch beschreiben lassen sich diese Vorgänge unter der Annahme eines
-Widerstandsverhältnisses $\frac{R_2}{R_1} << V$ durch
+Widerstandsverhältnisses $\frac{R_2}{R_1} << V$ durch \\
 \begin{align}
-  I_e = - I_a = \frac{U_e}{R_1} = - \frac{U_a}{R_2} \\
-  \implies \frac{U_a}{U_e} = V' = -\frac{R_2}{R_1},
+  I_e &= - I_a = \frac{U_e}{R_1} = - \frac{U_a}{R_2} \\
+  \implies \frac{U_a}{U_e} &= V' = -\frac{R_2}{R_1},
   \label{eqn:05}
 \end{align}
 \noindent mit $V'$ als Leerlaufverstärkung. Neben der Größe des Eingangssignals
 ist auch die Frequenz $\nu$ des Eingangssignals für den Betrieb von
 Operationsverstärkern von Bedeutung. Für hohe Frequenzen zeigt sich, dass die
 Verstärkung rapide abnimmt. Die Grenzfrequenz ist erreicht, sobald das
-Signal auf einen Wert $U_a = \frac{U_e}{\sqrt{2}}$ abgefallen ist \cite{fredenau, sample}.
+Signal auf einen Wert $U_a = \frac{U_e}{\sqrt{2}}$ abgefallen ist \cite{federau, sample}.
 \subsubsection{Umkehr-Integrator}
-\noindent Wird der Widerstand $R_2$ aus \autoref{fig:03} durch einen
-Kondensator ersetzt, so ergibt sich die in \autoref{fig:04} dargestellte
-Schaltskizze eines Umkehr-Integrators.
+\noindent Wird der Widerstand $R_2$ aus Abbildung \ref{fig:03} durch einen
+Kondensator ersetzt, so ergibt sich die in Abbildung\ref{fig:04} dargestellte
+Schaltskizze eines Umkehr-Integrators. \\
+\FloatBarrier
 \begin{figure}
   \centering
   \includegraphics{ressources/figure_04.png}
   \caption{Schaltskizze eines Umkehr-Integrators mit Operationsverstärker \cite{sample}}
   \label{fig:04}
 \end{figure}
-\noindent Mithilfe von Integratorschaltungen mir eingesetzten
+\FloatBarrier
+\noindent Mithilfe von Integratorschaltungen mit eingesetzten
 Operationsverstärker lassen sich elektrische Signale integrieren. Dabei gilt die
 Beziehung
 \begin{align}
@@ -150,7 +157,7 @@ Integral zu
 \noindent (nach \cite{muenster}).
 \subsubsection{Invertierender Differenzierer}
 \noindent Werden bei sonst gleichbleibenden Aufbau die Positionen von Widerstand
-und Kondensator getauscht, führt die in \autoref{fig:05} abgebildete Schaltung
+und Kondensator getauscht, führt die in Abbildung \ref{fig:05} abgebildete Schaltung
 die Funktion eines Differenzierers aus. Für die Ausgangsspannung eines
 invertierenden Differenzierers gilt die Gleichung
 \begin{align}
@@ -158,28 +165,32 @@ invertierenden Differenzierers gilt die Gleichung
   \label{eqn:08}
 \end{align}
 nach \cite{osnabrueck}.
+\FloatBarrier
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{ressources/figure_05.png}
+  \includegraphics[scale=0.99]{ressources/figure_05.png}
   \caption{Invertierende Differenziererschaltung \cite{sample}.}
   \label{fig:05}
 \end{figure}
+\FloatBarrier
 \subsubsection{Schmitt-Trigger}
 \noindent Im Gegensatz zu den bisher betrachteten Schaltungen mit Gegenkopplung
 wird bei der Schmitt-Trigger-Schaltung der zurückgeführte Teil der
 Ausgangsspannung auf den nicht-invertierenden Eingang geschaltet. Diese Mitkopplung
 zeichnet sich daher durch eine Selbsterhaltung aus: das rückgeführte
-Ausgangssignal erhöht das Eingangssignal, es treten Hystereseeffekte in
+Ausgangssignal erhöht das Eingangssignal und es treten Hystereseeffekte in
 Erscheinung \cite{elektrotechnik}. Als sogenannter Komparator vergleicht eine
 Schmitt-Trigger-Schaltung die Eingangsspannung mit einer Differenzspannung.
 Bei Überschreitung der Referenzspannung kippt die Schaltung auf den Wert ihrer
 positiven oder negativen Aussteuergrenze.
+\FloatBarrier
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{ressources/figure_06.png}
+  \includegraphics[scale=0.99]{ressources/figure_06.png}
   \caption{Schaltskizze eines Schmitt-Triggers \cite{sample}}
   \label{fig:06}
 \end{figure}
+\FloatBarrier
 \noindent Die Kippspannung des Schmitt-Triggers berechnet sich nach \cite{federau}
 über die Relation
 \begin{align}
@@ -197,9 +208,11 @@ einer Dreieckschaltung berechnet sich nach \cite{sample} über
   \nu_\text{Dreieck} = \frac{R_2}{4 \cdot C \cdot R_1 \cdot R_3}.
   \label{eqn:10}
 \end{align}
+\FloatBarrier
 \begin{figure}
   \centering
-  \includegraphics{ressources/figure_07.png}
+  \includegraphics[scale=0.8]{ressources/figure_07.png}
   \caption{Darstellung einer Schaltung zur Signalgenerierung \cite{sample}.}
   \label{fig:07}
 \end{figure}
+\FloatBarrier
