@@ -1,4 +1,3 @@
-\section{Theoretische Grundlagen}
 Operationsverstärker sind elektrische Bauteile aus dem Bereich der analogen
 Signalverarbeitung und bestehen aus Schaltungen von Transistoren. Bei der
 Planung von Schaltungen mit Operationsverstärkern werden diese als idealisierte
@@ -10,7 +9,7 @@ gerechtfertigt wäre. \\
 verschiedenen Funktionsweisen wie beispielsweise Gegenkopplung oder
 Mitkopplung. Die Funktionsprinzipien dieser Schaltungen werden für exemplarische
 Schaltungen erläutert.
-\subsection{Eigenschaften idealer Operationsverstärker}
+\subsubsection{Eigenschaften idealer Operationsverstärker}
 Ideale Operationsverstärker kennzeichnen sich dadurch aus, dass ihre
 Leerlaufverstärkung $\frac{U_A}{U_E}$ als unendlich groß angenommen wird und
 dass kein Strom in den Operationsverstärker hineinfließen kann, da sein
@@ -62,7 +61,7 @@ Ausgang gekennzeichnet.
   \caption{Schaltzeichen eines Operationsverstärkers \cite{federau}.}
   \label{fig:02}
 \end{figure}
-\subsection{Reale Operationsverstärker}
+\subsubsection{Reale Operationsverstärker}
 \noindent Bevor die Funktionsweisen der Gegen- und Mitkopplung am Beispiel
 verschiedener Schaltungen erläutert werden, wird ein realer Operationsverstärker
 betrachtet. Anders als ideale Operationsverstärker besitzen reale
@@ -86,9 +85,9 @@ getroffen, gilt die Relation
   \label{eqn:04}
 \end{align}
 \noindent wobei $V_0 = - \frac{U_A}{U_N}$ \cite{muenster}.
-\subsection{Operationsverstärker in Schaltungen}
-Einfache Rechenoperationen und die Steuerung von Signalen lassen sich durch
-Schaltungen mit Widerständen und Kondensatoren realisieren.
+%\subsubsection{Operationsverstärker in Schaltungen}
+%Einfache Rechenoperationen und die Steuerung von Signalen lassen sich durch
+%Schaltungen mit Widerständen und Kondensatoren realisieren.
 \subsubsection{Invertierender Linearverstärker}
 Ein invertierender Linearverstärker arbeitet mit einer Gegenkopplung, welche
 sicherstellen soll, dass die Verstärkung unverzerrt ist. Dies wird durch eine
@@ -149,7 +148,7 @@ Integral zu
   \label{eqn:07}
 \end{align}
 \noindent (nach \cite{muenster}).
-\subsection{Invertierender Differenzierer}
+\subsubsection{Invertierender Differenzierer}
 \noindent Werden bei sonst gleichbleibenden Aufbau die Positionen von Widerstand
 und Kondensator getauscht, führt die in \autoref{fig:05} abgebildete Schaltung
 die Funktion eines Differenzierers aus. Für die Ausgangsspannung eines
@@ -165,7 +164,7 @@ nach \cite{osnabrueck}.
   \caption{Invertierende Differenziererschaltung \cite{sample}.}
   \label{fig:05}
 \end{figure}
-\subsection{Schmitt-Trigger}
+\subsubsection{Schmitt-Trigger}
 \noindent Im Gegensatz zu den bisher betrachteten Schaltungen mit Gegenkopplung
 wird bei der Schmitt-Trigger-Schaltung der zurückgeführte Teil der
 Ausgangsspannung auf den nicht-invertierenden Eingang geschaltet. Diese Mitkopplung
