@@ -1,21 +1,3 @@
-%Für die Fehlerrechung wird die empirische Standartabweichung
-%\begin{equation}
-%  \sigma = \sqrt{\frac{1}{n-1} \cdot \sum_{i=1}^n(x_i-\overline{x})^2}
-%  \label{eqn:Stdabweichung}
-%\end{equation}
-%und die Gaußsche Fehlerfortpflanzung
-%\begin{equation}
-%  u_y = \sqrt{\sum_{i=1}^n\left(\frac{\delta y}{\delta x_i}u_x\right)^2}
-%  \label{eqn:gauß}
-%\end{equation}
-%verwendet.
-%\begin{figure}
-%  \centering
-%  \includegraphics{build/plot.pdf}
-%  \caption{Plot}
-%  \label{fig:plot}
-%\end{figure}
-
 \subsection{Untersuchung des Linearverstärkers}
 Es wurden drei Konfigurationen des Linearverstärkers nach Skizze \ref{fig:03} aufgebaut und vermessen. Die Versorgungsspannung beträgt $\left|V_{\pm}\right|=15\si{\volt}$ (symmetrisch). Die verwendeten Widerstände sind in Tabelle \ref{tab:Data_a} aufgelistet und die Messdaten in Abbildung \ref{fig:Plot_a} dargestellt. Mit einer (logarithmischen) Ausgleichsgerade der Form
 \begin{equation}
@@ -57,7 +39,7 @@ Die Plateaus sind in allen drei Konfigurationen eindeutig zu erkennen, die tats�
 
 \begin{figure}
   \centering
-  \includegraphics{build/plot_U_f_a.pdf}
+  \includegraphics[width=0.8\textwidth]{build/plot_U_f_a.pdf}
   \caption{Spannungsverstärkung gegen der Frequenz der in Tabelle \ref{tab:Data_a} aufgelisteten Konfigurationen eines Linearverstärkers nach Skizze \ref{fig:03}. Die Plateaus und der Abfall der Spannung bei steigender Frequenz ist gut erkennbar, passt aber nicht mit der Theorie zusammen. Die Ausgleichsgeraden sind über den gefitteten Bereich dargestellt und nach Gleichung \ref{eqn:log_fit} mit den Fitwerten aus der Tabelle \ref{tab:Fit_a}}
   \label{fig:Plot_a}
 \end{figure}
@@ -65,7 +47,7 @@ Die Plateaus sind in allen drei Konfigurationen eindeutig zu erkennen, die tats�
 Im nächsten Schritt wird die Phasenverschiebung zwischen Ein- und Ausgang der Verstärkerschaltung untersucht. Hierzu wird der Verlauf der Phasenverschiebung gegen die Frequenz in Abbildung \ref{fig:Plot_b} aufgetragen. Auffälig ist der Vergleich zur Verstärkungskurve aus Abbildung \ref{fig:Plot_a}. Die Phase startet nahe $0$° und steigt in den gleichen Bereichen, wie die Verstärkung abfällt. Die lineare Verstärkung wird hier mit nicht-linearer Verstärkung überlagert und dadurch verringert.
 \begin{figure}
   \centering
-  \includegraphics{build/plot_phi_f_a.pdf}
+  \includegraphics[width=0.8\textwidth]{build/plot_phi_f_a.pdf}
   \caption{Phasenverschiebung gegen der Frequenz der in Tabelle \ref{tab:Data_a} aufgelisteten Konfigurationen eines Linearverstärkers nach Skizze \ref{fig:03}.}
   \label{fig:Plot_b}
 \end{figure}
@@ -84,7 +66,7 @@ In den Daten sollte eine lineare Beziehnug zwischen Frequenz und Ausgangsspannun
 
 \begin{figure}
   \centering
-  \includegraphics{build/plot_U_f_c.pdf}
+  \includegraphics[width=0.8\textwidth]{build/plot_U_f_c.pdf}
   \caption{Verstärkung eines sinus-förmigen Eingangssignal in einen Integrator aufgebaut nach Skizze \ref{fig:04}. Die erwarte Proportionalität zwischen Verstärkung und Frequenz ist nicht zu beobachten.}
   \label{fig:Plot_c}
 \end{figure}
@@ -92,17 +74,17 @@ Die integrierenden Eigenschaften des Integrators können mittels der Bilder vom 
 
 \begin{figure}
   \centering
-  \begin{subfigure}{0.4\textwidth}
+  \begin{subfigure}{0.35\textwidth}
     \centering
     \includegraphics[width=\textwidth]{ressources/integral_sinus.png}
     \subcaption{Integrierte Sinusspannung}
   \end{subfigure}
-  \begin{subfigure}{0.4\textwidth}
+  \begin{subfigure}{0.35\textwidth}
     \centering
     \includegraphics[width=\textwidth]{ressources/integral_rechteck.png}
     \subcaption{Integrierte Rechtecksspannung}
   \end{subfigure}
-  \begin{subfigure}{0.4\textwidth}
+  \begin{subfigure}{0.35\textwidth}
     \centering
     \includegraphics[width=\textwidth]{ressources/integral_dreieck.png}
     \subcaption{Integrierte Dreiecksspannung}
@@ -142,17 +124,17 @@ Die differenzierenden Eigenschaften des Differenzierers können mittels der Bild
 
 \begin{figure}
   \centering
-  \begin{subfigure}{0.4\textwidth}
+  \begin{subfigure}{0.35\textwidth}
     \centering
     \includegraphics[width=\textwidth]{ressources/differential_sinus.png}
     \subcaption{Differentierte Sinusspannung}
   \end{subfigure}
-  \begin{subfigure}{0.4\textwidth}
+  \begin{subfigure}{0.35\textwidth}
     \centering
     \includegraphics[width=\textwidth]{ressources/differential_rechteck.png}
     \subcaption{Differentierte Rechtecksspannung}
   \end{subfigure}
-  \begin{subfigure}{0.4\textwidth}
+  \begin{subfigure}{0.35\textwidth}
     \centering
     \includegraphics[width=\textwidth]{ressources/differential_dreieck.png}
     \subcaption{Differentierte Dreiecksspannung}
@@ -180,21 +162,3 @@ und die gemessenen Schwellwerte liegen bei
   U_- &= -230 \si{\milli\volt}.
 \end{align}
 Mit Abweichungen von mehr als einer Zehnerpotenz kann damit die Theorie nicht bestätigt werden.
-
-
-
-%Teil a)
-%Verstärkung 1 (V_Theorie=100):  34.44
-%Verstärkung 2 (V_Theorie=15):  32.4
-%Verstärkung 3 (V_Theorie=3.3):  37.239999999999995
-%--------------------------------------
-%Ausgleichsgerade 1: a =  -0.6697889545175408 ; b =  9.753528915703285
-%Ausgleichsgerade 2: a =  -0.6450320512200023 ; b =  9.27002883169569
-%--------------------------------------
-%Grenzfrequenz 1: f =  17951.86737530906
-%Grenzfrequenz 2: f =  17951.86737530906
-
-%--------------------------------------
-
-%Teil e)
-%Theorethische Schwellspannung:  0.006818181818181818 V
