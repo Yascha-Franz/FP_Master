@@ -1,12 +1,12 @@
 \subsection{Untersuchung des Linearverstärkers}
-Es wurden drei Konfigurationen des Linearverstärkers nach Skizze \ref{fig:03} aufgebaut und vermessen. Die Versorgungsspannung beträgt $\left|V_{\pm}\right|=15\si{\volt}$ (symmetrisch). Die verwendeten Widerstände sind in Tabelle \ref{tab:Data_a} aufgelistet und die Messdaten in Abbildung \ref{fig:Plot_a} dargestellt. Mit einer (logarithmischen) Ausgleichsgerade der Form
+Es werden drei Konfigurationen des Linearverstärkers nach Skizze \ref{fig:03} aufgebaut und vermessen. Die Versorgungsspannung beträgt $\left|V_{\pm}\right|=15\si{\volt}$ (symmetrisch). Die verwendeten Widerstände sind in Tabelle \ref{tab:Data_a} aufgelistet und die Messdaten in Abbildung \ref{fig:Plot_a} dargestellt. Mit einer (logarithmischen) Ausgleichsgerade der Form
 \begin{equation}
   \text{log}\left(\left|\frac{U_a}{U_e}\right|\right) = a\text{log}\left(\frac{\nu}{\text{Hz}}\right) + b
   \label{eqn:log_fit}
 \end{equation}
 lassen sich die Parameter aus Tabelle \ref{tab:Fit_a} berechnen. $V_{\text{Plateau}}$ ist hierbei der Mittelwert der Verstärkung im Plateau und $\nu_{\text{Grenz}}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}}$ abgefallen ist.
 Die Plateaus sind in allen drei Konfigurationen eindeutig zu erkennen, die tatsächliche Verstärkung stimmt aber nicht mit der theoretischen überein. Für die ersten zwei Konfigurationen kann die konvergierende Kurve zu höheren Frequenzen nachgewiesen werden, aber die dritte Konfiguration sticht hierbei ebenfalls heraus.
-
+\FloatBarrier
 \begin{table}
   \centering
   \caption{Widerstandswerte und theoretische Verstärkungen in den drei vermessenen Konfigurationen.}
@@ -21,7 +21,8 @@ Die Plateaus sind in allen drei Konfigurationen eindeutig zu erkennen, die tats�
     \bottomrule
   \end{tabular}
 \end{table}
-
+\FloatBarrier
+\FloatBarrier
 \begin{table}
   \centering
   \caption{Fitwerte und tatsächliche Verstärkungen in Plateaus, sowie die Grenzfrequenz $\nu_{\text{Grenz}}$ in den drei vermessenen Konfigurationen. In der dritten Konfiguration konnte der Anfang des abfallenden Bereichs nachgewiesen werden, aber nicht genug um einen Fit zu erstellen.}
@@ -36,22 +37,24 @@ Die Plateaus sind in allen drei Konfigurationen eindeutig zu erkennen, die tats�
     \bottomrule
   \end{tabular}
 \end{table}
-
+\FloatBarrier
+\FloatBarrier
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{build/plot_U_f_a.pdf}
-  \caption{Spannungsverstärkung gegen der Frequenz der in Tabelle \ref{tab:Data_a} aufgelisteten Konfigurationen eines Linearverstärkers nach Skizze \ref{fig:03}. Die Plateaus und der Abfall der Spannung bei steigender Frequenz ist gut erkennbar, passt aber nicht mit der Theorie zusammen. Die Ausgleichsgeraden sind über den gefitteten Bereich dargestellt und nach Gleichung \ref{eqn:log_fit} mit den Fitwerten aus der Tabelle \ref{tab:Fit_a}}
+  \caption{Spannungsverstärkung gegen der Frequenz der in Tabelle \ref{tab:Data_a} aufgelisteten Konfigurationen eines Linearverstärkers nach Skizze \ref{fig:03}. Die Plateaus und der Abfall der Spannung bei steigender Frequenz sind gut erkennbar, passt aber nicht mit der Theorie zusammen. Die Ausgleichsgeraden sind über den gefitteten Bereich dargestellt und nach Gleichung \ref{eqn:log_fit} mit den Fitwerten aus der Tabelle \ref{tab:Fit_a}}
   \label{fig:Plot_a}
 \end{figure}
-
-Im nächsten Schritt wird die Phasenverschiebung zwischen Ein- und Ausgang der Verstärkerschaltung untersucht. Hierzu wird der Verlauf der Phasenverschiebung gegen die Frequenz in Abbildung \ref{fig:Plot_b} aufgetragen. Auffälig ist der Vergleich zur Verstärkungskurve aus Abbildung \ref{fig:Plot_a}. Die Phase startet nahe $0$° und steigt in den gleichen Bereichen, wie die Verstärkung abfällt. Die lineare Verstärkung wird hier mit nicht-linearer Verstärkung überlagert und dadurch verringert.
+\FloatBarrier
+\noindent Im nächsten Schritt wird die Phasenverschiebung zwischen Ein- und Ausgang der Verstärkerschaltung untersucht. Hierzu wird der Verlauf der Phasenverschiebung gegen die Frequenz in Abbildung \ref{fig:Plot_b} aufgetragen. Auffälig ist der Vergleich zur Verstärkungskurve aus Abbildung \ref{fig:Plot_a}. Die Phase startet nahe $0$° und steigt in den gleichen Bereichen, wie die Verstärkung abfällt. Die lineare Verstärkung wird hier mit nicht-linearer Verstärkung überlagert und dadurch verringert.
+\FloatBarrier
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{build/plot_phi_f_a.pdf}
   \caption{Phasenverschiebung gegen der Frequenz der in Tabelle \ref{tab:Data_a} aufgelisteten Konfigurationen eines Linearverstärkers nach Skizze \ref{fig:03}.}
   \label{fig:Plot_b}
 \end{figure}
-
+\FloatBarrier
 \subsection{Untersuchung des Umkehr-Integrator}
 Im folgenden wird eine Umkehr-Integrator-Schaltung nach Skizze \ref{fig:04} untersucht. Hierbei ist zu beachten, dass die Ausgangsspannung einem Integral der Eingangsspannung nach der Gleichung
 \begin{align}
@@ -63,7 +66,7 @@ folgen sollte. Da in diesem Versuch nur die Maximalspannungen gemessen wurden, k
   \left|\frac{\text{max}\left(U_a\right)}{\text{max}\left(U_e\right)}\right| \sim \frac{2\pi\nu}{RC}.
 \end{equation}
 In den Daten sollte eine lineare Beziehnug zwischen Frequenz und Ausgangsspannung ersichtlich werden. Die Daten sind in Abbildung \ref{fig:Plot_c} dargestellt. Offensichtlich herrscht hier keinerlei lineare Beziehung zwischen Ein- und Ausgangsspannung.
-
+\FloatBarrier
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{build/plot_U_f_c.pdf}
@@ -71,7 +74,8 @@ In den Daten sollte eine lineare Beziehnug zwischen Frequenz und Ausgangsspannun
   \label{fig:Plot_c}
 \end{figure}
 Die integrierenden Eigenschaften des Integrators können mittels der Bilder vom Oszilloskop in den Abbildungen \ref{fig:Osz_c} bestätigt werden.
-
+\FloatBarrier
+\FloatBarrier
 \begin{figure}
   \centering
   \begin{subfigure}{0.35\textwidth}
@@ -92,7 +96,7 @@ Die integrierenden Eigenschaften des Integrators können mittels der Bilder vom 
   \caption{Graphische Aufnahme des Oszilloskops der Ein- (gelb) und Ausgangsspannung (grün) beim Aufbau eines Integrator nach Skizze \ref{fig:04}. Die integrierenden Eigenschaften des Aufbaus sind erkennbar bis gut erkennbar.}
   \label{fig:Osz_c}
 \end{figure}
-
+\FloatBarrier
 \subsection{Untersuchung des invertierenden Differenzierer}
 Im folgenden wird eine Umkehr-Integrator-Schaltung nach Skizze \ref{fig:04} untersucht. Hierbei ist zu beachten, dass die Ausgangsspannung einem Integral der Eingangsspannung nach der Gleichung
 \begin{align}
@@ -113,15 +117,16 @@ an dem geeigneten Bereich verwendet. Es ergeben sich die Fit-Parameter
   b &= 9.5\pm 0.4
 \end{align}
 Wäre die antiproportionale Beziehnug gegeben, wäre $a=-1$. $a$ ist zwar negativ, aber mit geringer Unsicherheit stark von 1 verschieden und damit kann die Antiproportionalität nicht bestätigt werden.
-
+\FloatBarrier
 \begin{figure}
   \centering
-  \includegraphics{build/plot_U_f_d.pdf}
+  \includegraphics[scale=0.8]{build/plot_U_f_d.pdf}
   \caption{Verstärkung eines sinus-förmigen Eingangssignal in einen Differenzierer aufgebaut nach Skizze \ref{fig:05}. Die erwarte Antiproportionalität zwischen Verstärkung und Frequenz ist nicht zu beobachten.}
   \label{fig:Plot_d}
 \end{figure}
 Die differenzierenden Eigenschaften des Differenzierers können mittels der Bilder vom Oszilloskop in den Abbildungen \ref{fig:Osz_d} nicht klar bestätigt werden.
-
+\FloatBarrier
+\FloatBarrier
 \begin{figure}
   \centering
   \begin{subfigure}{0.35\textwidth}
@@ -142,7 +147,7 @@ Die differenzierenden Eigenschaften des Differenzierers können mittels der Bild
   \caption{Graphische Aufnahme des Oszilloskops der Ein- (gelb) und Ausgangsspannung (grün) beim Aufbau eines Differenzierers nach Skizze \ref{fig:05}. Die differenzierenden Eigenschaften des Aufbaus sind mit gutem Willen erkennbar, aber zu verrauscht, als das eine definitive Aussage getroffen werden könnte.}
   \label{fig:Osz_d}
 \end{figure}
-
+\FloatBarrier
 \subsection{Untersuchung des Schmitt-Triggers}
 Im folgenden werden die Schwellwerte eines Schmitt-Triggers aufgebaut nach \ref{fig:06} untersucht. Die technischen Daten des Aufbaus sind:
 \begin{align}
@@ -150,7 +155,7 @@ Im folgenden werden die Schwellwerte eines Schmitt-Triggers aufgebaut nach \ref{
   U_{A,-} &= 15\si{\volt}\\
   U_{1}   &= 2\si{\volt}\\
   R_{1}   &= 100\si{\ohm}\\
-  R_{2}   &= 220\si{\kilo\ohm}  
+  R_{2}   &= 220\si{\kilo\ohm}
 \end{align}
 Mit Gleichung \ref{eqn:09} ergibt sich ein theoretischer Schwellwert von
 \begin{equation}
