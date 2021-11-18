@@ -1,11 +1,11 @@
 \subsection{Untersuchung des Linearverstärkers}
 Es werden drei Konfigurationen des Linearverstärkers nach Skizze \ref{fig:03} aufgebaut und vermessen. Die Versorgungsspannung beträgt $\left|V_{\pm}\right|=15\si{\volt}$ (symmetrisch). Die verwendeten Widerstände sind in Tabelle \ref{tab:Data_a} aufgelistet und die Messdaten in Abbildung \ref{fig:Plot_a} dargestellt. Mit einer (logarithmischen) Ausgleichsgerade der Form
 \begin{equation}
-  \text{log}\left(\left|\frac{U_a}{U_e}\right|\right) = a\text{log}\left(\frac{\nu}{\text{Hz}}\right) + b
+  \text{log}\left(\left|\frac{U_a}{U_e}\right|\right) = a\cdot\text{log}\left(\frac{\nu}{\text{Hz}}\right) + b
   \label{eqn:log_fit}
 \end{equation}
-lassen sich die Parameter aus Tabelle \ref{tab:Fit_a} berechnen. $V_{\text{Plateau}}$ ist hierbei der Mittelwert der Verstärkung im Plateau und $\nu_{\text{Grenz}}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}}$ abgefallen ist.
-Die Plateaus sind in allen drei Konfigurationen eindeutig zu erkennen, die tatsächliche Verstärkung stimmt aber nicht mit der theoretischen überein. Für die ersten zwei Konfigurationen kann die konvergierende Kurve zu höheren Frequenzen nachgewiesen werden, aber die dritte Konfiguration sticht hierbei ebenfalls heraus.
+lassen sich die Parameter aus Tabelle \ref{tab:Fit_a} berechnen. Die Fitparameter sind über die Wahl der Geraden einheitenlos. $V_{\text{Plateau}}$ ist hierbei der Mittelwert der Verstärkung im Plateau und $\nu_{\text{Grenz}}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}}$ abgefallen ist.
+Die Plateaus sind in allen drei Konfigurationen eindeutig zu erkennen, die tatsächliche Verstärkung stimmt aber nicht mit der theoretischen überein. Für die ersten zwei Konfigurationen kann die konvergierende Kurve zu höheren Frequenzen nachgewiesen werden, aber die dritte Konfiguration sticht hierbei ebenfalls heraus, da diese erst sehr viel später an Effizienz verliert. Sie wiederspricht somit den qualitativen Überlegungen, dass alle Konfigurationen in dieselbe Gerade übergehen.
 \FloatBarrier
 \begin{table}
   \centering
@@ -42,11 +42,11 @@ Die Plateaus sind in allen drei Konfigurationen eindeutig zu erkennen, die tats�
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{build/plot_U_f_a.pdf}
-  \caption{Spannungsverstärkung gegen der Frequenz der in Tabelle \ref{tab:Data_a} aufgelisteten Konfigurationen eines Linearverstärkers nach Skizze \ref{fig:03}. Die Plateaus und der Abfall der Spannung bei steigender Frequenz sind gut erkennbar, passt aber nicht mit der Theorie zusammen. Die Ausgleichsgeraden sind über den gefitteten Bereich dargestellt und nach Gleichung \ref{eqn:log_fit} mit den Fitwerten aus der Tabelle \ref{tab:Fit_a}}
+  \caption{Spannungsverstärkung gegen der Frequenz der in Tabelle \ref{tab:Data_a} aufgelisteten Konfigurationen eines Linearverstärkers nach Skizze \ref{fig:03}. Die Plateaus und der Abfall der Spannung bei steigender Frequenz sind gut erkennbar, passt aber nicht mit der Theorie zusammen. Die Ausgleichsgeraden sind über den gefitteten Bereich dargestellt und nach Gleichung \ref{eqn:log_fit} mit den Fitwerten aus der Tabelle \ref{tab:Fit_a} erstellt.}
   \label{fig:Plot_a}
 \end{figure}
 \FloatBarrier
-\noindent Im nächsten Schritt wird die Phasenverschiebung zwischen Ein- und Ausgang der Verstärkerschaltung untersucht. Hierzu wird der Verlauf der Phasenverschiebung gegen die Frequenz in Abbildung \ref{fig:Plot_b} aufgetragen. Auffälig ist der Vergleich zur Verstärkungskurve aus Abbildung \ref{fig:Plot_a}. Die Phase startet nahe $0$° und steigt in den gleichen Bereichen, wie die Verstärkung abfällt. Die lineare Verstärkung wird hier mit nicht-linearer Verstärkung überlagert und dadurch verringert.
+\noindent Im nächsten Schritt wird die Phasenverschiebung zwischen Ein- und Ausgang der Verstärkerschaltung untersucht. Hierzu wird der Verlauf der Phasenverschiebung gegen die Frequenz in Abbildung \ref{fig:Plot_b} aufgetragen. Auffälig ist der Vergleich zur Verstärkungskurve aus Abbildung \ref{fig:Plot_a}. Die Phase startet nahe $0$° und steigt in den gleichen Bereichen, wie die Verstärkung abfällt. Der Verstärker stößt hier an die Grenze seiner Schaltgeschwindigkeit.
 \FloatBarrier
 \begin{figure}
   \centering
@@ -64,13 +64,14 @@ Im folgenden wird eine Umkehr-Integrator-Schaltung nach Skizze \ref{fig:04} unte
 folgen sollte. Da in diesem Versuch nur die Maximalspannungen gemessen wurden, kann das offene Integral mittels der Maximumsbeziehung umgeschrieben werden zu
 \begin{equation}
   \left|\frac{\text{max}\left(U_a\right)}{\text{max}\left(U_e\right)}\right| \sim \frac{2\pi\nu}{RC}.
+  \label{eqn:Integrator}
 \end{equation}
-In den Daten sollte eine lineare Beziehnug zwischen Frequenz und Ausgangsspannung ersichtlich werden. Die Daten sind in Abbildung \ref{fig:Plot_c} dargestellt. Offensichtlich herrscht hier keinerlei lineare Beziehung zwischen Ein- und Ausgangsspannung.
+In den Daten sollte laut Gleichung \ref{eqn:Integrator} eine lineare Beziehnug zwischen Frequenz und Ausgangsspannung ersichtlich werden. Die Daten sind in Abbildung \ref{fig:Plot_c} dargestellt. Offensichtlich herrscht hier keinerlei lineare Beziehung zwischen Ein- und Ausgangsspannung. Es ist ebenfalls ein starker Unterschied zwischen den zwei aufgenommenen Messreihen erkennbar, obwohl sich hier nur die Position des Aufbaus auf dem Steckboard geändert hat.
 \FloatBarrier
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{build/plot_U_f_c.pdf}
-  \caption{Verstärkung eines sinus-förmigen Eingangssignal in einen Integrator aufgebaut nach Skizze \ref{fig:04}. Die erwarte Proportionalität zwischen Verstärkung und Frequenz ist nicht zu beobachten.}
+  \caption{Verstärkung eines sinus-förmigen Eingangssignal in einen Integrator aufgebaut nach Skizze \ref{fig:04}. Die erwarte Proportionalität zwischen Verstärkung und Frequenz ist nicht zu beobachten. Der Aufbau wurde zweimal mit derselben Konfiguration an verschiedenen Stellen des Steckboards aufgebaut.}
   \label{fig:Plot_c}
 \end{figure}
 Die integrierenden Eigenschaften des Integrators können mittels der Bilder vom Oszilloskop in den Abbildungen \ref{fig:Osz_c} bestätigt werden.
@@ -98,7 +99,7 @@ Die integrierenden Eigenschaften des Integrators können mittels der Bilder vom 
 \end{figure}
 \FloatBarrier
 \subsection{Untersuchung des invertierenden Differenzierer}
-Im folgenden wird eine Umkehr-Integrator-Schaltung nach Skizze \ref{fig:04} untersucht. Hierbei ist zu beachten, dass die Ausgangsspannung einem Integral der Eingangsspannung nach der Gleichung
+Im folgenden wird eine Umkehr-Differenzierer-Schaltung nach Skizze \ref{fig:05} untersucht. Hierbei ist zu beachten, dass die Ausgangsspannung einem Differential der Eingangsspannung nach der Gleichung
 \begin{align}
   U_a &= -RC\frac{\text{d}U_e(2\pi \nu t)}{\text{d}t}\\
       &= -\frac{RC}{2\pi\nu} \frac{\text{d}U_e(t')}{\text{d}t'}
@@ -107,14 +108,14 @@ folgen sollte. Da in diesem Versuch nur die Maximalspannungen gemessen wurden, k
 \begin{equation}
   \left|\frac{\text{max}\left(U_a\right)}{\text{max}\left(U_e\right)}\right| \sim \frac{RC}{2\pi\nu}.
 \end{equation}
-In den Daten sollte also eine anti-proportional Beziehnug zwischen Frequenz und Ausgangsspannung ersichtlich werden. Die Daten sind in Abbildung \ref{fig:Plot_c} dargestellt. Als Fit wird hier wieder eine lineare Ausgleichsgerade der doppel-logarithmierten Daten
+In den Daten sollte also eine anti-proportionale Beziehnug zwischen Frequenz und Ausgangsspannung ersichtlich werden. Die Daten sind in Abbildung \ref{fig:Plot_c} dargestellt. Als Fit wird hier wieder eine lineare Ausgleichsgerade der doppel-logarithmierten Daten
 \begin{equation}
-  \text{log}\left(\left|\frac{\text{max}\left(U_a\right)}{\text{max}\left(U_e\right)}\right|\right) = a\text{log}\left(\nu \right)+b
+  \text{log}\left(\left|\frac{\text{max}\left(U_a\right)}{\text{max}\left(U_e\right)}\right|\right) = a\cdot\text{log}\left(\nu \right)+b
 \end{equation}
 an dem geeigneten Bereich verwendet. Es ergeben sich die Fit-Parameter
 \begin{align}
-  a &= -0.65\pm 0.04\\
-  b &= 9.5\pm 0.4
+  a &= -0.65 &\pm 0.04\\
+  b &= 9.5   &\pm 0.4
 \end{align}
 Wäre die antiproportionale Beziehnug gegeben, wäre $a=-1$. $a$ ist zwar negativ, aber mit geringer Unsicherheit stark von 1 verschieden und damit kann die Antiproportionalität nicht bestätigt werden.
 \FloatBarrier
