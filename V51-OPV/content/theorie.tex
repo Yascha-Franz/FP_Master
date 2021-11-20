@@ -11,33 +11,36 @@ Mitkopplung. Die Funktionsprinzipien dieser Schaltungen werden für exemplarisch
 Schaltungen erläutert.
 \subsubsection{Eigenschaften idealer Operationsverstärker}
 Ideale Operationsverstärker kennzeichnen sich dadurch aus, dass ihre
-Leerlaufverstärkung $V = \frac{U_A}{U_E}$ als unendlich groß angenommen wird und
+Leerlaufverstärkung $V = \frac{U_A}{U_P}$ (Verhältnis der Ausgangsspannung $U_A$
+zur Eingangsspannung $U_P$) als unendlich groß angenommen wird und
 dass kein Strom in den Operationsverstärker hineinfließen kann, da sein
-Eingangswiderstand unendlich groß ist. Ferner verschwindet der
-Ausgangswiderstand eines Operationsverstärkers und seine Übertragungsbandbreite
+Eingangswiderstand unendlich groß ist. Der
+Ausgangswiderstand eines Operationsverstärkers beträgt $\SI{0}{\ohm}$ und seine Übertragungsbandbreite
 umfasst einen unendlich großen Frequenzbereich, ohne dass eine Phasendrehung
 stattfindet \cite{federau}. \\
-\noindent Operationsverstärker sind Differenzverstärker. Ihre Ausgangsspannung $U_A$
+\noindent Operationsverstärker sind Differenzverstärker, was bedeutet, dass ihr
+Ausgangssignal durch die Differenz der beiden Eingangssignale gebildet wird.
+Ihre Ausgangsspannung $U_A$
 ist proportional zur Differenz zwischen der Eingangsspannung $U_P$ am
 nicht-invertierenden Eingang und der Eingangsspannung $U_N$ am
-invertierenden Eingang. Der Proportionalitätsfaktor sei $V$. Damit gilt
+invertierenden Eingang. Der Proportionalitätsfaktor (Verstärkungsfaktor) sei $V$. Damit gilt
 \begin{align}
   U_A = V \cdot \left(U_P - U_N \right).
   \label{eqn:01}
 \end{align}
-\noindent Der Verstärkungsfaktor liegt typischerweise in einer Größenordnung
-zwischen $\num{e4}$ und $\num{e5}$, sofern die Versorgungsspannung $U_V$ im
+\noindent Im Gegensatz dazu liegt der Verstärkungsfaktor eines realen
+Operationsverstärkers typischerweise in einer Größenordnung
+zwischen ${10^4}$ und ${10^5}$, sofern die Versorgungsspannung $U_G$ im
 zulässigen Spannungsintervall (bauartbedingt) liegt. Aufgrund der hohen
 Verstärkung liegt die Spannungsdifferenz zwischen $U_P$ und $U_N$ meist im
 Bereich einiger Millivolt, eine höhere Spannungsdifferenz führt dann nicht
-zu größeren Verstärkungen, sondern die Verstärkung durch den Operationsverstärker
-geht in einen Bereich der Sättigung, wie in Abbildung \ref{fig:01} dargestellt ist
+zu größeren Verstärkungen, sondern zur Sättigung, wie in Abbildung \ref{fig:01} dargestellt ist
 \cite{hs-fulda}. \\
 \FloatBarrier
 \begin{figure}
   \centering
   \includegraphics[scale=0.8]{ressources/figure_01.png}
-  \caption{Verstärkungskennlinie für idealen und realen Operationsverstärker. $U_\text{Doffset}$
+  \caption{Verstärkungskennlinie (VKL) für idealen und realen Operationsverstärker. $U_\text{Doffset}$
   kennzeichnet die Eingangs-Offsetspannung, $U_\text{Du}$ und $U_\text{Do}$ kennzeichnen
   die untere und obere Grenze des linearen Verstärkungsbereichs \cite{elektrotechnik}.}
   \label{fig:01}
@@ -45,7 +48,7 @@ geht in einen Bereich der Sättigung, wie in Abbildung \ref{fig:01} dargestellt 
 \FloatBarrier
 \noindent Die Aussteuergrenze (Sättigungsbereich) liegt etwa $\SI{1}{\volt}$
 unterhalb der Betriebsspannung $U_B$ des Operationsverstärkers \cite{federau}, der
-lineare Bereich damit zwischen
+lineare Bereich liegt damit zwischen
 \begin{align}
   - U_B < U_A < + U_B,
   \label{eqn:02}
@@ -87,13 +90,13 @@ getroffen, gilt die Relation
   \implies U_0 &= \frac{V_\text{Gl}}{V_0} \cdot U_\text{Gl},
   \label{eqn:04}
 \end{align}
-\noindent wobei $V_0 = - \frac{U_A}{U_N}$ \cite{muenster}.
+\noindent wobei $V_0 = - \frac{U_A}{U_N}$ ist \cite{muenster}.
 %\subsubsection{Operationsverstärker in Schaltungen}
 %Einfache Rechenoperationen und die Steuerung von Signalen lassen sich durch
 %Schaltungen mit Widerständen und Kondensatoren realisieren.
 \subsubsection{Invertierender Linearverstärker}
 Ein invertierender Linearverstärker arbeitet mit einer Gegenkopplung, welche
-sicherstellen soll, dass die Verstärkung unverzerrt ist. Dies wird durch eine
+sicherstellen soll, dass die Verstärkung kontinuierlich ansteuerbar ist. Dies wird durch eine
 Rückführung des Ausgangssignals auf den Signaleingang erreicht. \\
 Abbildung \ref{fig:03} zeigt die Schaltskizze eines invertierenden
 Linearverstärkers. \\
@@ -109,7 +112,7 @@ Linearverstärkers. \\
 führt zu einer negativen Ausgangsspannung, welche über den Widerstand
 $R_2$ auf den invertierenden Eingang des Operationsverstärkers zurückgeführt
 wird und auf diese Weise die Wirkung der positiven Eingangsspannung schwächt.
-Der Liegt keine Eingangsspannung an, ist auch keine Ausgangsspannung oder
+Liegt keine Eingangsspannung an, ist auch keine Ausgangsspannung oder
 Differenzspannung messbar. Wird die Eingangsspannung erhöht, reagiert die Schaltung
 auf den Signaleingang. Durch die Spannungsaufteilung auf die in Reihe
 geschalteten Widerstände resultiert eine Differenzspannung, welche den
@@ -124,14 +127,19 @@ Widerstandsverhältnisses $\frac{R_2}{R_1} << V$ durch \\
   \implies \frac{U_a}{U_e} &= V' = -\frac{R_2}{R_1},
   \label{eqn:05}
 \end{align}
-\noindent mit $V'$ als Leerlaufverstärkung. Neben der Größe des Eingangssignals
+\noindent mit $V'$ als Leerlaufverstärkung. $I_e$ und $I_a$ bezeichnen dabei die
+Eingangs- und Ausgangsspannungen, $U_e$ und $U_a$ die Eingangs- und Ausgangsspannungen,
+Widerstände werden mit $R$ bezeichnet.
+Neben der Größe des Eingangssignals
 ist auch die Frequenz $\nu$ des Eingangssignals für den Betrieb von
 Operationsverstärkern von Bedeutung. Für hohe Frequenzen zeigt sich, dass die
-Verstärkung rapide abnimmt. Die Grenzfrequenz ist erreicht, sobald das
+Verstärkung aufgrund der ansteigenden Phasenfifferenz zwischen Eingangs- und
+Ausgangssignal rapide abnimmt.
+Die Grenzfrequenz ist erreicht, sobald das
 Signal auf einen Wert $U_a = \frac{U_e}{\sqrt{2}}$ abgefallen ist \cite{federau, sample}.
 \subsubsection{Umkehr-Integrator}
 \noindent Wird der Widerstand $R_2$ aus Abbildung \ref{fig:03} durch einen
-Kondensator ersetzt, so ergibt sich die in Abbildung\ref{fig:04} dargestellte
+Kondensator ersetzt, so ergibt sich die in Abbildung \ref{fig:04} dargestellte
 Schaltskizze eines Umkehr-Integrators. \\
 \FloatBarrier
 \begin{figure}
@@ -178,8 +186,9 @@ nach \cite{osnabrueck}.
 wird bei der Schmitt-Trigger-Schaltung der zurückgeführte Teil der
 Ausgangsspannung auf den nicht-invertierenden Eingang geschaltet. Diese Mitkopplung
 zeichnet sich daher durch eine Selbsterhaltung aus: das rückgeführte
-Ausgangssignal erhöht das Eingangssignal und es treten Hystereseeffekte in
-Erscheinung \cite{elektrotechnik}. Als sogenannter Komparator vergleicht eine
+Ausgangssignal erhöht das Eingangssignal und es tritt eine Hysterese in
+Erscheinung \cite{elektrotechnik}. \\
+Für den Spezialfall eines Komparators vergleicht eine
 Schmitt-Trigger-Schaltung die Eingangsspannung mit einer Differenzspannung.
 Bei Überschreitung der Referenzspannung kippt die Schaltung auf den Wert ihrer
 positiven oder negativen Aussteuergrenze.
@@ -194,10 +203,10 @@ positiven oder negativen Aussteuergrenze.
 \noindent Die Kippspannung des Schmitt-Triggers berechnet sich nach \cite{federau}
 über die Relation
 \begin{align}
-  U_\text{kipp} = U_B \cdot \frac{R_1}{R_P},
+  U_\text{kipp} = U_B \cdot \frac{R_1}{R_2},
   \label{eqn:09}
 \end{align}
-wobei $R_P$ den Widerstand bezeichnet, über welchen das Signal zurückgeführt
+wobei $R_2$ den Widerstand bezeichnet, über welchen das Signal zurückgeführt
 wird. \\
 \noindent Eine Schmitt-Trigger-Schaltung mit nachgeschalteten Umkehr-Integrator
 lässt sich dazu nutzen, Rechteck- oder Dreieckspannungen zu erzeugen.
