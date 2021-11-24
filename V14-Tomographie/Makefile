@@ -9,6 +9,7 @@ else
 endif
 
 all: build/finish.pdf
+plot: build/plot.pdf
 
 build/finish.pdf: build/plot.pdf content/aufbau.tex content/auswertung.tex content/diskussion.tex content/durchfuehrung.tex finish.tex header.tex content/theorie.tex title.tex content/ergebnisse.tex| build
 	TEXINPUTS="$(call translate,build:)" \
