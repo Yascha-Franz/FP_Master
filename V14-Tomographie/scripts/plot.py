@@ -59,12 +59,12 @@ def polarplot(x,y,f,savepath):
     plt.savefig(savepath)
     plt.clf()
 
-def Fit(x,a,b):
-    return x*a +b
-x,y = np.genfromtxt('scripts/data.txt',unpack=True)
-plt.xlabel('X')
-plt.ylabel('Y')
-plotfit(x,y,Fit,'build/plot.pdf')
+# def Fit(x,a,b):
+#     return x*a +b
+# x,y = np.genfromtxt('scripts/data.txt',unpack=True)
+# plt.xlabel('X')
+# plt.ylabel('Y')
+# plotfit(x,y,Fit,'build/plot.pdf')
 
 #gather all the data
 counts_1_01 = np.genfromtxt('scripts/data/Würfel_1/Würfel_1_1.Spe', unpack=True, skip_header=12, skip_footer=17)
@@ -137,8 +137,8 @@ x_max = 171
 
 x_scale_total = np.linspace(100, 180-1, 80)
 plt.step(x_scale_total, counts_4[7, 100:180])
-#x_scale_total = np.linspace(0, np.shape(counts_1)[1]-1, np.shape(counts_1)[1])
-#plt.step(x_scale_total, counts_1[0])
+x_scale_total = np.linspace(0, np.shape(counts_1)[1]-1, np.shape(counts_1)[1])
+plt.step(x_scale_total, counts_1[0])
 
 x_scale = np.linspace(x_min, x_max-1, x_max-x_min)
 plt.step(x_scale, counts_4[7, x_min:x_max], color='red',label='integrierter bereich')
@@ -146,7 +146,7 @@ plt.step(x_scale, counts_4[7, x_min:x_max], color='red',label='integrierter bere
 
 plt.legend(loc='best')
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-#plt.savefig('build/photopeak.pdf')
+plt.savefig('build/photopeak.pdf')
 plt.clf()
 
 #integrate the photopeak
