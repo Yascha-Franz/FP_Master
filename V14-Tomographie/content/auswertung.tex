@@ -1,4 +1,5 @@
-Für die Fehlerrechung wird die empirische Standartabweichung
+Die durchgeführten Messungen unterliegen Messunsicherheiten. Für die Bestimmung
+dieser Messunsicherheiten werden die empirische Standardabweichung
 \begin{equation}
   \sigma = \sqrt{\frac{1}{n-1} \cdot \sum_{i=1}^n(x_i-\overline{x})^2}
   \label{eqn:Stdabweichung}
@@ -8,10 +9,83 @@ und die Gaußsche Fehlerfortpflanzung
   u_y = \sqrt{\sum_{i=1}^n\left(\frac{\delta y}{\delta x_i}u_x\right)^2}
   \label{eqn:gauß}
 \end{equation}
-verwendet.
-\begin{figure}
-  \centering
-  \includegraphics{build/plot.pdf}
-  \caption{Plot}
-  \label{fig:plot}
-\end{figure}
+verwendet. \\
+\newline
+\noindent Die Wahl der Richtung des Strahlengangs durch den Würfel legt die
+Matrix $\textbf{A}$ fest. Für die in Abbildung \ref{fig:04} dargestellten
+Richtungen ergibt sich die Matrix
+\begin{align}
+  \textbf{A} = \begin{pmatrix*}[c]
+                 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+                 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\
+                 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+                 0 & \sqrt{2} & 0 & \sqrt{2} & 0 & 0 & 0 & 0 & 0 \\
+                 0 & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 & 0 \\
+                 0 & 0 & 0 & 0 & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 \\
+                 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+                 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 \\
+                 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 \\
+                 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 \\
+                 \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} \\
+                 0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0
+               \end{pmatrix*}.
+\end{align}
+\noindent Aus den gemessenen Intensitäten für die verschiedenen Richtungen
+lassen sich die Absorptionskoeffizienten bestimmen. Würfel $1$ dient dabei
+als Referenzmessung und besteht selbst lediglich aus dem Aluminiumblech, welches
+die Hülle bildet. Deren Einfluss auf die Absorption wird daher bei allen
+Adsorptionskoeffizienten berücksichtigt und herausgerechnet. Gemäß den
+Gleichungen \ref{eqn:03} bis Gleichung \ref{eqn:05} ergeben sich somit die
+Absorptionskoeffizienten der jeweiligen Würfel unter Berücksichtigung ihrer
+Messunsicherheiten zu
+\begin{align}
+  \vec{\mu}_2 = \begin{pmatrix*}[c]
+                0.06443602 \pm 0.00409104 \\
+                0.04719267 \pm 0.00302454 \\
+                0.04687276 \pm 0.00407686 \\
+                0.03838809 \pm 0.0030178 \\
+                0.04866847 \pm 0.00318385 \\
+                0.07343893 \pm 0.00303886 \\
+                0.04562751 \pm 0.00409217 \\
+                0.06043446 \pm 0.0030291 \\
+                0.04096713 \pm 0.00407606
+                \end{pmatrix*},
+\end{align}
+\begin{align}
+  \vec{\mu}_3 = \begin{pmatrix*}[c]
+                0.86052077 \pm 0.01313316  \\
+                1.28121956 \pm 0.01034112  \\
+                0.92677002 \pm 0.01386284  \\
+                0.83604375 \pm 0.00939364  \\
+                0.95146769 \pm 0.01101726  \\
+                1.30528224 \pm 0.01066586 \\
+                1.02353279 \pm 0.01302184  \\
+                0.98951325 \pm 0.00955678  \\
+                1.03059674 \pm 0.01378654
+                \end{pmatrix*}
+\end{align}
+\noindent und
+\begin{align}
+  \vec{\mu}_4 = \begin{pmatrix*}[c]
+                 0.12720674   \pm 0.00574798  \\
+                 0.98520605   \pm 0.00501731  \\
+                 0.10406502   \pm 0.00578873  \\
+                 -0.05209837  \pm  0.00453632 \\
+                 1.03778897   \pm 0.00530894  \\
+                 0.20942458   \pm 0.0047592   \\
+                 0.16830403   \pm 0.00571699  \\
+                 0.94291212   \pm 0.00495178  \\
+                 0.10017016   \pm 0.0058061
+                \end{pmatrix*}.
+\end{align}
+\noindent Die inneren Elementarwürfel der Würfel $2$ und $3$ bestehen jeweils
+aus den gleichen Elementen, daher können Ihre Absorptionskoeffizienten über die
+verschiedenen Einträge der Vektoren $\mu_i$ für $i = 1, 2, 3, 4$ gemittelt
+werden. Für die gemittelten Absorptionskoeffizienten gilt
+\begin{align}
+  \mu_2 = (0.051780670154972314  \pm  0.011020710397047466) \: \si{\centi\metre^{-2}}\\
+  \mu_3 = (1.0227718680457842  \pm  0.15750439584823495) \: \si{\centi\metre^{-2}}.
+\end{align}
+\noindent Für Würfel $4$ gilt dies nicht, er besteht aus verschiedenen
+Elementarwürfeln, welche aus den in Würfel $2$ und $3$ verarbeiteten Materialien
+bestehen.

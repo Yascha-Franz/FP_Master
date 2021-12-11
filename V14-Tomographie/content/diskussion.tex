@@ -1,1 +1,69 @@
-insert diskussion here
+\noindent Um die Messergebnisse interpretieren zu können, müssen diese mit den
+Literaturwerten verglichen werden. Basisdaten hierzu werden vom nationalen
+Institut für Standards und Technologien \cite{nist} bereitgestellt. Die
+möglichen Materialien sind Messing $CuZn$, Delerin ${CH_2O}$, Blei $^{82}Pb$,
+Aluminium $^{13}Al$ und
+Eisen $^{26}Fe$. Die zugehörigen Absorptionskoeffizienten $\mu$ berechnen sich
+auch dem Produkt des Massenschwächungskoeffizienten und der Dichte. Die
+Literaturwerte und berechneten Absorptionskoeffizienten sind Tabelle \ref{tab:01}
+zu entnehmen.
+\begin{table}
+  \centering
+  \caption{Materialabhängige Absorptionskoeffizienten \cite{nist} \cite{density}}
+  \label{tab:01}
+  \begin{tabular}{c c c c}
+    \toprule
+   \multicolumn{1}{c}{Material} & \multicolumn{1}{c}{Massenabschwächungskoeffizient}
+   & \multicolumn{1}{c}{Dichte} & \multicolumn{1}{c}{Absorptionskoeffizient} \\
+   \midrule
+    Aluminium &\SI{0.078}{\square\centi\metre\per\gram}&\SI{2.699}{\gram\per\cubic\centi\metre} &\SI{0.211}{\centi\metre^{-2}} \\
+    Blei      &\SI{0.125}{\square\centi\metre\per\gram}&\SI{11.35}{\gram\per\cubic\centi\metre}& \SI{1.419}{\centi\metre^{-2}} \\
+    Eisen     &\SI{0.077}{\square\centi\metre\per\gram}&\SI{7.874}{\gram\per\cubic\centi\metre} &\SI{0.606}{\centi\metre^{-2}} \\
+    Messing   &\SI{0.077}{\square\centi\metre\per\gram}&\SI{8.284}{\gram\per\cubic\centi\metre}& \SI{0.638}{\centi\metre^{-2}} \\
+    Delerin   &\SI{0.086}{\square\centi\metre\per\gram}&\SI{1.405}{\gram\per\cubic\centi\metre}& \SI{0.121}{\centi\metre^{-2}} \\
+\bottomrule
+  \end{tabular}
+\end{table}
+\noindent Die für den Würfel $2$ berechneten Absorptionkoeffizienten stimmen nicht
+gut mit den Literaturwerten für die verschiedenen Materialien überein. Wenngleich
+dieser etwa der Hälfte des Absorptionskoeffizienten das Delerin entspricht, deuten
+die Absorptionskoeffizienten der Elementarwürfel in Würfel $4$ an, dass die
+Absorptionskoeffizeinten für Delerin und die anderen Elemente wesentlich genauer
+bestimmt werden können. Bestätigt wird diese Vermututung auch dadurch, dass der
+gemittelte Absorptionskoeffizient für Würfel $3$ mit einer Messunsicherheit von
+etwa $\SI{39}{\percent}$ vom Literaturwert für Blei abweicht, während die
+Abweichung des Würfels $2$ zum Delerin bei $\SI{132}{\percent}$ und zu Aluminium
+bei etwa $\SI{405}{\percent}$ liegt.  \\
+\noindent Für den Würfel $4$ lassen sich die Elementarwürfel deutlicher
+verschiedenen Materialien zuordnen. Die Zuordnung ist in Tabelle \ref{tab:02}
+dargestellt.
+\FloatBarrier
+\begin{table}
+  \centering
+  \caption{Absorptionskoeffizienten und Materialübereinstimmungen des Würfels $4$}
+  \label{tab:02}
+  \begin{tabular}{c c c}
+    \toprule
+   \multicolumn{1}{c}{$\mu_i$} & \multicolumn{1}{c}{Materialübereinstimmung }
+   & \multicolumn{1}{c}{Abweichung zu \ref{tab:01}}  \\
+   \midrule
+    $\mu_1$ & Delerin &   $\SI{5}{\percent} $\\
+    $\mu_2$ & Blei &      $\SI{31}{\percent}$ \\
+    $\mu_3$ & Delerin &   $\SI{14}{\percent}$ \\
+    $\mu_4$ & Delerin &   $\SI{41}{\percent}$ \\
+    $\mu_5$ & Blei &      $\SI{27}{\percent}$ \\
+    $\mu_6$ & Aluminium & $\SI{1}{\percent} $\\
+    $\mu_7$ & Aluminium & $\SI{21}{\percent}$ \\
+    $\mu_8$ & Messing &   $\SI{47}{\percent}$ \\
+    $\mu_9$ & Delerin &   $\SI{18}{\percent}$ \\
+\bottomrule
+  \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent Der Versuch zur Tomographie zeigt damit, dass es möglich ist,
+verschiedene Strukturen zu unterscheiden. Die Messunsicherheiten deuten allerdings
+an, dass eine genaue Unterscheidung nicht immer zuverlässig möglich ist. Dies
+liegt zum Teil daran, dass die Materialien nicht gemäß der idealisierten
+Richtungszuweisung (vgl. \ref{fig:04}) vom Strahlengang durchleuchtet wurden.
+Zusätzlich ist unter Berücksichtigung der Größe der einzelnen Elementarwürfel
+die Annahme einer punktförmigen Strahlungsquelle aufzugeben.
