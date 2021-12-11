@@ -1,12 +1,12 @@
 Die durchgeführten Messungen unterliegen Messunsicherheiten. Für die Bestimmung
 dieser Messunsicherheiten werden die empirische Standardabweichung
 \begin{equation}
-  \sigma = \sqrt{\frac{1}{n-1} \cdot \sum_{i=1}^n(x_i-\overline{x})^2}
+  \sigma_I = \sqrt{\frac{1}{n}}
   \label{eqn:Stdabweichung}
 \end{equation}
-und die Gaußsche Fehlerfortpflanzung
+und die Fehlerfortpflanzung
 \begin{equation}
-  u_y = \sqrt{\sum_{i=1}^n\left(\frac{\delta y}{\delta x_i}u_x\right)^2}
+  \sigma_{\mu} = \sqrt{\left(A^T \cdot \sigma_I^2 \cdot A\right)^{-1}}
   \label{eqn:gauß}
 \end{equation}
 verwendet. \\
