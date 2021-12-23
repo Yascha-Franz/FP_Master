@@ -7,26 +7,74 @@ Feld \cite{nmr_relaxation}.
 \subsection{Kern- und Elektronenmagnetismus}
 \noindent Magnetisch wechselwirkende Kerne besitzen neben einem magnetischen
 Moment einen Drehimpuls $\vec{J}$. Dieser ist proportional zum magnetischen
-Moment
-\begin{align}
-  \vec{\mu} = \gamma \cdot \vec{J},
-  \label{eqn:01}
-\end{align}
-\noindent wobei der Proportionalitätsfaktor $\gamma$ den gyromagnetischen Faktor
-beschreibt. Unter Einfluss eines äußeren magnetischen Feldes $B$ koppeln das
-magnetische Moment und das magnetische Feld $B$ zu einem Drehmoment
-\begin{align}
-  \vec{D} = \vec{\mu} \times B = \frac{d \vec{J}}{dt}.
-  \label{eqn:02}
-\end{align}
-\noindent Für konstante, homogene Felder mit fester räumlicher Orientierung
+Moment $\vec{\mu} = \gamma \cdot \vec{J}$, wobei der Proportionalitätsfaktor
+$\gamma$ den gyromagnetischen Faktor beschreibt. Unter Einfluss eines äußeren
+magnetischen Feldes $B$ koppeln das magnetische Moment und das magnetische Feld
+$B$ zu einem Drehmoment $\vec{D} = \vec{\mu} \times B = \frac{d \vec{J}}{dt}$.
+Für konstante, homogene Felder mit fester räumlicher Orientierung
 (beispielsweise in z-Richtung) präzediert das magnetische Moment $\vec{\mu}$
 entlang der Richtung des magnetischen Feldes. Die zur Präzession gehörige
-Frequenz ist dabei die Lamorfrequenz
+Frequenz ist dabei die Lamorfrequenz $\nu = \frac{\omega}{2 \cdot \pi} =
+\frac{\gamma \cdot B_i}{2 \cdot \pi}$. Der Index $i$ der magnetischen Feldstärke
+gibt dabei an, in welche Richtung (x-, y-, oder z-Richtung) das Feld
+ausgerichtet ist. $\omega$ entspricht der zur Lamorfrequenz gehörigen
+Winkelgeschwindigkeit.
+\subsection{Magnetisierung und Relaxation}
+\noindent Das magnetische Feld an der Probe ist bedingt durch den
+Permanentmagneten näherungsweise konstant. Zusätzlich befindet sich die Probe in
+einer Spule, in welche durch kurze Strompulse magnetische Felder induziert
+werden. Die Pulse lassen sich dazu nutzen, das thermische Gleichgewicht der
+Probe zu stören und die Magnetisierung um einen Winkel proportional zur
+Pulsdauer zu drehen. \\
+\noindent Nach Abklingen des kurzen Strompulses und Verschwinden des
+Magnetfeldes beginnt die angeregte Magnetisierung der Probe ins thermische
+Gleichgewicht zurück zu relaxieren. Das Relaxiationsverhalten wird dabei durch
+die Bloch-Gleichungen
 \begin{align}
-  \nu = \frac{\omega}{2 \cdot \pi} = \frac{\gamma \cdot \B_i}{2 \cdot \pi}.
-  \label{eqn:03}
+  \left(\frac{dM_x}{dt} \right) &= \left(-\frac{M_x}{T_2} \right),  \qquad
+  \left(\frac{dM_y}{dt} \right) = \left(-\frac{M_y}{T_2} \right) \\
+  \left(\frac{dM_z}{dt} \right) &= \left(\frac{M_0 - M_z}{T_1} \right),  \qquad
+  M_z = M_0 \cdot \left(1 - \exp{\left(-\frac{t}{T_1}\right)}\right)
+  \label{eqn:01}
 \end{align}
-\noindent Der Index $i$ der magnetischen Feldstärke gibt dabei an, in welche
-Richtung (x-, y-, oder z-Richtung) das Feld ausgerichtet ist. $\omega$ entspricht
-der zur Lamorfrequenz gehörigen Winkelgeschwindigkeit.  
+\noindent beschrieben. Der Index $i$ gibt auch hier wieder die Richtung der
+Magnetisierung an, $M_0$ beschreibt die Magnetisierung im thermischen
+Gleichgewicht. $T_1$ beschreibt die Spin-Gitter-Relaxationszeit und $T_2$
+entspricht der Spin-Spin-Relaxationszeit. \\
+\subsubsection{Spin-Gitter-Relaxationszeit}
+Die Relaxationszeit in z-Richtung wird in den Bloch Gleichungen 1 bis 2
+durch $T_1$ beschrieben. Diese Zeitkonstante beschreibt dabei die Eigenschaften
+des Spinsystems sowie die Eigenschaften dessen unmittelbarer Umgebung. Für große
+Werte von $T_1$ besteht lediglich eine schwache Kopplung von Spinsystem und
+Umgebung, kleine Werte lassen auf eine starke Kopplung beider Systeme schließen.
+Während der Relaxation wird die potentielle Energie der Kernspins der Probe in
+eine Gitterschwingung umgewandelt. \\
+\subsubsection{Spin-Spin-Relaxation}
+\noindent Während Spin-Spin-Relaxation auf die z-Richtung beschränkt ist, findet
+die Spin-Spin-Relaxation in der xy-Ebene statt. In dieser Ebene entspricht die
+Magnetisierung aus allen Präzessionsbewegungen um die z-Achse. Da diese nicht
+volkommen homogen über die Ebene verteilt ist, unterscheiden sich die zu den
+Präzessionen gehörigen Lamor-Frequenzen gering voneinander, sodass die
+Spins bereits nach kurzer Zeit nicht weiter in Phase schwingen \cite{nmr}.
+\subsection{Diffusion}
+\noindent Für sphärische Moleküle mit dem Radius $r$ liefert die
+Einstein-Stokes Gleichung
+\begin{align}
+  D = \frac{k_B \cdot T}{6 \cdot \pi \cdot \eta \cdot r}
+  \label{eqn:02}
+\end{align}
+\noindent eine Möglichkeit, aus der Diffusionskonstanten $D$ den Molekülradius
+$r$ zu bestimmen. Dieser ist Abhängig von der Temperatur $T$ der Moleküle sowie
+der Viskosität $\eta$. Die Boltzmann-Konstante $k_B$ drückt ebenso wie der
+Faktor $\pi$ lediglich eine Proportionalität aus \cite{stokes}. \\
+\noindent In einem magnetischen Gradientenfeld führt die Verschiebung der Spins
+aufgrund der Diffusionsprozesse während der $T_2$ Relaxation zu einer
+zusätzlichen Signalabnahme. Mit der Diffusions-Zeitkonstante
+$T_D = \frac{3}{\gamma^2 \cdot \tau^2 \cdot G^2 \cdot D}$ lässt sich schließlich
+der Diffusionskoeffizient der Einstein-Stokes Gleichung \ref{eqn:02} bestimmen,
+welcher sich in einen Molekülradius $r$ umrechnen lässt. Der Faktor $\gamma$
+beschreibt dabei noch immer das gyromagnetische Verhältnis, $\tau$ entspricht
+dem zeitlichen Abstand der Pulse und $G$ stellt den magnetischen Feldgradienten
+dar, welcher sich aus $G = \frac{2 \cdot \pi \cdot d_f}{\gamma \cdot d}$
+berechnen lässt. Der Durchmesser des gemessenen Spektrums $d_f$ ist dabei in
+$\si{\hertz}$ angegeben, $d$ bezeichnet den Innendurchmesser der Probe \cite{sample}.
