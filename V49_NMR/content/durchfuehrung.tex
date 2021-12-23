@@ -1,1 +1,40 @@
-insert durchfuehrung here
+\noindent Zu Beginn des Versuchs wird die Temperatur am Ort der Probe mittels
+des Thermometers gemessen. Anschließend wird eine Referenzprobe aus mit
+Kupfersulfat versetzten Wasser in die Spule im Permanentmagneten eingesetzt und
+die Justage vorgenommen. Für die Startparameter sind dabei die Frequenz $f =
+\SI{21.7}{\mega\hertz}$, die Pulslänge des A-Pulses $t_A =
+\SI{2}{\micro\second}$, die Anzahl der B-Pulse $N_B = 0$, sowie die Periodendauer
+$P = \SI{0.5}{\second}$ und die Shims-Parameter $x = -0.1, y = -5.0, z = 3.7$
+und $z^2 = -2.4$ am Steuergerät einzustellen. Bei der Justage der Frequenz ist
+zu beachten, dass die Detektion von Real- und Imaginärteil relativ zur
+Lamorfrequenz geschieht und dass die Frequenz dann korrekt justiert ist, wenn
+keine Schwingungen des Signals mehr messbar sind. Um einen deutlichen
+Signaleingang zu erhalten, ist die Phase so zu wählen, dass der Imaginärteil
+verschwindet und das Signal im Realteil angetragen wird. Durch die
+Shimen-Parameter wird die Feldhomogenität der Spule homogenisiert, die Pulslänge
+für einen $\alpha = \SI{90}{\degree}$ Puls (A-Puls) betrage
+$\SI{2}{\micro\second}$, für einen $\alpha = \SI{180}{\degree}$ Pulses (B-Puls)
+betrage die Pulsdauer $\SI{4}{\micro\second}$. \\
+Zur Messung der Spin-Gitter-Relaxationszeit $T_1$ werden die Pulslängen des
+A-Pulses und des B-Pulses auf die vorab definierten Parameter eingestellt.
+Die Anzahl der B-Pulse werde auf $N_B = 1$ begrenzt. Für die Periode ist eine
+Dauer von $P = \SI{10}{\second}$ zu wählen, eine Nachjustage ist erforderlich,
+sobald der Abstand zwischen den Pulsen $\tau$ mehr als eine Sekunde beträgt. In
+diesem Fall ist eine Periodendauer $P + \tau$ zu wählen. Variiert werden soll in
+der Messung der Pulsabstand $\tau$, während die Amplitude des FID nach dem
+A-Puls gemessen wird. \\
+\noindent Unter dem \enquote{freien Induktionsfall} (FID) ist die Relaxation
+der Magnetisierung zurück ins thermische Gleichgewicht bekannt, nachdem ein
+A-Puls für eine Verkippung innerhalb der xy-Ebene gesorgt hat. Das
+Relaxationsverhalten lässt sich dabei beschreiben durch die Gleichungen
+\begin{align}
+  M_x(\tau) &= M_0 \cdot \cos{\omega_0 \tau} \cdot \exp{\left( - \frac{\tau}{T_2}\right)} \qquad \text{und} \\
+  M_y(\tau) &= - M_0 \cdot \sin{\omega_0 \tau} \cdot \exp{\left( - \frac{\tau}{T_2}\right)}.
+\end{align}
+\noindent Das sich periodisch ändernde Magnetfeld bewirkt dadurch nach den
+Lenz'schen Regeln einen Induktionsstrom. Diese entstehende Schwingung des
+Induktionsstromes klingt mit der Zeit ab und wird gemessen. Bei der Messung ist
+darauf zu achten, dass $\tau$ so gewählt wird, dass für den kürzesten Abstand
+noch keine Relaxation stattgefunden hat, die Magnetisierung der Probe für den
+längsten Abstand allerdings vollständig relaxiert ist. Des Weiteren ist die
+Messung bis weit über den Nulldurchgang hinaus durchzuführen. 
