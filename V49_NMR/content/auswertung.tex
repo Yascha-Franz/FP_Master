@@ -1,4 +1,4 @@
-Für die Fehlerrechung wird die empirische Standartabweichung
+\noindent Für die Fehlerrechung wird die empirische Standardabweichung
 \begin{equation}
   \sigma = \sqrt{\frac{1}{n-1} \cdot \sum_{i=1}^n(x_i-\overline{x})^2}
   \label{eqn:Stdabweichung}
@@ -9,9 +9,20 @@ und die Gaußsche Fehlerfortpflanzung
   \label{eqn:gauß}
 \end{equation}
 verwendet.
-\begin{figure}
-  \centering
-  \includegraphics{build/plot.pdf}
-  \caption{Plot}
-  \label{fig:plot}
-\end{figure}
+\noindent Um die Spin-Spin-Relaxationszeit $T_2$ zu bestimmen, werden
+aufeinander verschiedene Verfahren angewendet. Beim Hahn-Echo-Verfahren werden
+Feldinhomogenitäten durch Ausnutzung der FID kompensiert. Ein A-Puls regt den
+FID an, ein B-Puls spiegelt die Auslenkung des Signals an der y-Achse.
+Divergierende Spins konvergieren dadurch wieder und es entsteht ein Echo. Die
+Messung der Amplituden erfolgt dabei in einem Abstand von $2 \cdot \tau$. Eine
+Erweiterung dieses Messverfahrens ist das Carr-Purcell-Messverfahren. In diesem
+wird anstelle von einem Signalecho im Abstand $2 \cdot \tau$ eine Vielzahl
+dieser Echosignale betrachtet. Problematisch dabei ist allerdings, dass eine
+nur gering von der theoretischen Pulslänge abweichende tatsächliche
+Pulslänge nicht gänzlich zur Spiegelung des Signals an der y-Achse führt und
+so eine mit jedem Schritt ansteigende Messunsicherheit verursacht. Stehen die
+B-Pulse allerdings mit einem Versatz von $\Delta \phi = \SI{90}{degree}$ zu den
+A-Pulsen, so löschen sich die entstehenden Unsicherheiten bei jeder Spiegelung
+selbst aus, für Gesamtpulslängen ganzzahliger Vielfacher von $4 \cdot \tau$
+werden korrigierte Werte gemessen. Dieses Verfahren wird auch
+Meiboom-Gill-Verfahren genannt.  

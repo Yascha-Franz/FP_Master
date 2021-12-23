@@ -28,8 +28,8 @@ der Magnetisierung zurück ins thermische Gleichgewicht bekannt, nachdem ein
 A-Puls für eine Verkippung innerhalb der xy-Ebene gesorgt hat. Das
 Relaxationsverhalten lässt sich dabei beschreiben durch die Gleichungen
 \begin{align}
-  M_x(\tau) &= M_0 \cdot \cos{\omega_0 \tau} \cdot \exp{\left( - \frac{\tau}{T_2}\right)} \qquad \text{und} \\
-  M_y(\tau) &= - M_0 \cdot \sin{\omega_0 \tau} \cdot \exp{\left( - \frac{\tau}{T_2}\right)}.
+  M_x(\tau) &= M_0 \cdot \cos{(\omega_0 \tau)} \cdot \exp{\left( - \frac{\tau}{T_2}\right)} \qquad \text{und} \\
+  M_y(\tau) &= - M_0 \cdot \sin{(\omega_0 \tau)} \cdot \exp{\left( - \frac{\tau}{T_2}\right)}.
 \end{align}
 \noindent Das sich periodisch ändernde Magnetfeld bewirkt dadurch nach den
 Lenz'schen Regeln einen Induktionsstrom. Diese entstehende Schwingung des
@@ -37,4 +37,20 @@ Induktionsstromes klingt mit der Zeit ab und wird gemessen. Bei der Messung ist
 darauf zu achten, dass $\tau$ so gewählt wird, dass für den kürzesten Abstand
 noch keine Relaxation stattgefunden hat, die Magnetisierung der Probe für den
 längsten Abstand allerdings vollständig relaxiert ist. Des Weiteren ist die
-Messung bis weit über den Nulldurchgang hinaus durchzuführen. 
+Messung bis weit über den Nulldurchgang hinaus durchzuführen. \\
+\noindent Um die Spin-Spin-Relaxationszeit zu bestimmen, werden die Längen der
+A- und B-Pulse eingestellt und die Anzahl der Wiederholungen der B-Pulse auf
+$N_B = 100$ gesetzt. Die Periodendauer soll dazu mindestens $P = 3 \cdot T_1$
+betragen. Um eine Phasenverschiebung von $\Delta \phi = \SI{90}{\degree}$
+zwischen den A- und B-Pulsen zu erreichen, wird der Schalter \enquote{MG} auf
+\enquote{on} gestellt. Der Abstand der Pulse untereinander ist so zu wählen,
+dassdas Maximum des letzten Echosignals etwa $\frac{1}{3}$ des ersten Maximums
+beträgt. Zur Auswertung wird ein Bild des Ozsilloskops gespeichert. Anschließend
+wird diese Messung für die Schalterstellung \enquote{MG off} wiederholt. \\
+\noindent Zum Abschluss wird das Phänomen der Diffusion untersucht. Dazu wird
+mithilfe der Shimmen-Einstellung das Gradientenfeld erhöht, die A- und B-Pulse
+bleiben wie vorab eingestellt. Der B-Puls wird einmalig ausgeführt und erfährt
+keine Wiederholung. Die Periodendauer bleibt auf dem vorher eingestellten Wert.
+Über mehrere Größenordnungen hinweg wird anschließend der Pulsabstand $\tau$
+ausgehend von $\tau = \SI{100}{\micro\second}$ variiert. Die gemessenen Werte
+werden als .csv-Dateien vom Oszilloskop auf ein Speichermedium übertragen.  
