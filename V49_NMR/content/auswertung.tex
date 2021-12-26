@@ -25,4 +25,128 @@ B-Pulse allerdings mit einem Versatz von $\Delta \phi = \SI{90}{degree}$ zu den
 A-Pulsen, so löschen sich die entstehenden Unsicherheiten bei jeder Spiegelung
 selbst aus, für Gesamtpulslängen ganzzahliger Vielfacher von $4 \cdot \tau$
 werden korrigierte Werte gemessen. Dieses Verfahren wird auch
-Meiboom-Gill-Verfahren genannt.  
+Meiboom-Gill-Verfahren genannt. \\
+\subsection{Messung der Spin-Gitter Relaxationszeit}
+\noindent Die Spin-Gitter Relaxationszeit berechnet sich aus den zu den
+jeweiligen Pulsabständen $\tau$ gemessenen Spannungen, welche in Tabelle
+\ref{table:01} angegeben sind gemäß der Fit-Funktion
+\begin{align}
+  U(\tau) = M_0 \cdot \exp{\left(- \frac{\tau}{T_1}\right)} + M_1.
+  \label{eqn:03}
+\end{align}
+\noindent Abbildung \ref{fig:01} zeigt die graphische Darstellung der Messwerte
+inklusive Ausgleichsgerade. Die zu den längsten Pulsabständen gehörigen Werte
+wurden dabei nicht berücksichtigt, um eine bessere Fit-Funktion zu erreichen.
+Aus den aufgenommenen Werten lassen sich die Fitparameter
+\begin{align*}
+  M_0 &=  -(2.026  \pm  0.054) \: \si{\volt} \\
+  M_1 &=  (1.045 \pm  0.055) \: \si{\volt} \\
+  T_1 &=  (2.609  \pm  0.134) \: \si{\second}
+\end{align*}
+\noindent bestimmen.
+\FloatBarrier
+\input{resources/table_01.tex}
+\FloatBarrier
+\FloatBarrier
+\begin{figure}
+  \includegraphics{build/T1.pdf}
+  \caption{Spannungsamplituden in Abhängigkeit vom Pulsabstand zur Bestimmung
+           der Spin-Gitter-Relaxationszeit $T_1$.}
+  \label{fig:01}
+\end{figure}
+\FloatBarrier
+\noindent Die Spin-Gitter-Relaxationszeit liegt damit bei etwa
+\begin{align*}
+  T_1 &=  (2.609  \pm  0.134) \: \si{\second}.
+\end{align*}
+\subsection{Messung der Spin-Spin Relaxationszeit}
+\noindent analog zu Gleichung \ref{eqn:03} lässt sich eine Gleichung
+\begin{align}
+  U(\tau) = M_0 \cdot \exp{\left(- \frac{\tau}{T_2}\right)} + M_1.
+  \label{eqn:04}
+\end{align}
+\noindent aufstellen, um aus den gemessenen Daten die
+Spin-Spin-Relaxationszeit $T_2$ zu bestimmen. Der verwendete Datensatz stammt
+wie in der Durchführung beschrieben aus der $T_2$-Messung mit \enquote{MG on}.
+Die Messkurve inklusive Ausgleichskurve ist in Abbildung \ref{fig:02}
+dargestellt. Für die Parameter der Fit-Funktion ergeben sich die Werte
+\begin{align*}
+  M_0 &=  -(0.707  \pm  0.020) \si{\volt} \\
+  M_1 &=  -(0.037  \pm  0.024) \si{\volt} \\
+  T_2 &=  (1.822  \pm  0.120) \si{\second}.
+\end{align*}
+\noindent Die Dauer einer Spin-Spin-Relaxation beträgt daher
+\begin{align*}
+    T_2 &=  (1.822  \pm  0.120) \si{\second}.
+\end{align*}
+\FloatBarrier
+\begin{figure}
+  \includegraphics{build/T2.pdf}
+  \caption{Spannungsamplituden in Abhängigkeit vom Pulsabstand zur Bestimmung
+           der Spin-Gitter-Relaxationszeit $T_2$.}
+  \label{fig:02}
+\end{figure}
+\FloatBarrier
+\subsection{Berechnung der Diffusionskonstanten $D$}
+\noindent Zur Berechnung der Diffusionskonstanten $D$ ist es erforderlich, die
+Gradientenfeldstärke zu kennen. Zur Berechnung dieser wird der Probendurchmesser
+$d = \SI{4.4}{\milli\meter}$ und der Probendurchmesser ausgedrückt durch eine
+Frequenz zu $d_f = \SI{15200}{\hertz}$ abgelesen. Über die Formel
+\begin{align}
+  G = \frac{2 \cdot \pi \cdot d_f}{\gamma \cdot d}
+  \label{eqn:05}
+\end{align}
+\noindent berechnet sich die Gradientenfeldstärke unter Beachtung des
+gyromagnetischen Verhältnisses eines Protons $\gamma \approx \num{268e6} \:
+\frac{\text{rad}}{\si{\second\tesla}}$ zu
+$G = \num{0.081} \frac{\si{\tesla}}{\si{\meter}}$. \\
+\noindent Um daraus die Diffusionskonstante $D$ berechnen zu können, ist die
+Relaxationszeit $T_D$ zu berechnen. Die Messungen der über mehrere
+Größenordnungen variierenden Pulsabstände lassen sich durch eine Funktion
+\begin{align}
+  M(\tau) = M_0 \cdot \exp{\left(- \frac{2 \cdot \tau}{T_2}\right)} \cdot \exp{\left(- \frac{2 \cdot \tau^3}{a}\right)} + M_1
+ \label{eqn:06}
+\end{align}
+\noindent approximieren. In Abbildung \ref{fig:03} ist dieser Zusammenhang
+graphisch veranschaulicht. Dabei ergeben sich die Parameter
+\begin{align*}
+  M_0 &=  (0.890  \pm  0.005)          \si{\volt} \\
+  M_1 &=  (0.0390  \pm  0.005)         \si{\volt} \\
+  a &=  (3.175e-06  \pm  5.792e-08) \si{\second^3}.
+\end{align*}
+\FloatBarrier
+\begin{figure}
+  \includegraphics{build/tau_D.pdf}
+  \caption{Graphische Darstellung der aus den .csv Dateien extrahierten
+  Amplituden in Abhängigkeit vom Pulsabstand $\tau$}
+  \label{fig:03}
+\end{figure}
+\FloatBarrier
+\noindent Die verwendeten Messwerte lassen sich Tabelle \ref{table:02} entnehmen.
+\FloatBarrier
+\input{resources/table_02.tex}
+\FloatBarrier
+\noindent Die Relaxationszeit $T_D$ lässt sich dann berechnen über
+$T_D = \frac{a}{\tau^3}$, um daraus schließlich Rückschlüsse auf die
+Diffusionskonstante zu generieren. Es gilt
+\begin{align*}
+  D = =  (2.006e-09 \pm 3.660e-11) \frac{\si{\meter^2}}{\si{\second}}.
+\end{align*}
+\noindent Aus der Einstein-Stokes-Gleichung \ref{eqn:02} kann daraus unter Verwendung der
+Parameter $T = \SI{293.75}{\kelvin}$ (gemessen) und $\eta = \SI{10e-3}{\pascal\second}$
+\cite{Viskosität_Wasser} der Molekülradius zu
+\begin{align*}
+ r = (1.073\pm 1.957e-2) \text{\r{A}}
+\end{align*}
+\noindent bestimmen. Als Vergleichswert lässt sich aus der Gleichung
+\begin{align}
+  r = \sqrt[3]{\frac{3 \cdot M}{\rho \cdot N_A \cdot 4 \cdot \pi}}
+  \label{eqn:07}
+\end{align}
+\noindent nach \cite{radius} bestimmen. Für $M = \SI{18.015}{\gram\per\mol}$
+und $\rho = 1 \: \frac{\si{\gram}}{\si{\cubic\centi\meter}}$
+\cite{Viskosität_Wasser} und die Avogadro-Konstante $N_A$ bedeutet dies einen
+Radius
+\begin{align*}
+  r_\text{Theorie} = \num{1.742} \text{\r{A}}.
+\end{align*}

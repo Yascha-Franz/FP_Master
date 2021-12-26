@@ -47,12 +47,12 @@ def plotfit(x,y,f,savepath,slice_=slice(0,None),yerr=None, p0=None, save=True, c
         plt.clf()
     return params, errors
 
-def Fit(x,a,b):
-    return x*a +b
-x,y = np.genfromtxt('scripts/data.txt',unpack=True)
-plt.xlabel('X')
-plt.ylabel('Y')
-plotfit(x,y,Fit,'build/plot.pdf')
+# def Fit(x,a,b):
+#     return x*a +b
+# x,y = np.genfromtxt('scripts/data.txt',unpack=True)
+# plt.xlabel('X')
+# plt.ylabel('Y')
+# plotfit(x,y,Fit,'build/plot.pdf')
 
 #T1
 tau_T1, U_T1 = np.genfromtxt("scripts/data/T1.csv", delimiter = ",", unpack = True, skip_header = 1)
@@ -242,6 +242,7 @@ def Fit(tau, M0, M1, a):
     return M0 * np.exp(-2*tau/T_2) * np.exp(-2*tau**3/a) + M1
 
 #D = 3 * a/(gamma**2 * G**2)
+
 
 tau_D = np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) * 10**(-3)
 U_D = np.empty(29)
