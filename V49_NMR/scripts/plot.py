@@ -66,6 +66,9 @@ plt.plot(tau_T1, U_T1, 'k-'#, linewidth = '.3'
 #choose datapoints
 slice_ = slice(0,15)
 
+#save datapoints
+np.savetxt("build/used_data_T1.csv", np.array([tau_T1[slice_], U_T1[slice_]]).transpose(), delimiter=",")
+
 #plot datapoints
 plt.plot(tau_T1[slice_], U_T1[slice_], 'rx', label = 'Verwendete Werte')
 
@@ -146,6 +149,9 @@ slice_[1756] = True
 slice_[1797] = True
 slice_[1838] = True
 
+#save datapoints
+np.savetxt("build/used_data_T2.csv", np.array([t_T2[slice_], U_T2[slice_]]).transpose(), delimiter=",")
+
 #plot datapoints
 plt.plot(t_T2[slice_], U_T2[slice_], 'rx', label = 'Verwendete Werte')
 
@@ -211,7 +217,7 @@ fftdata = np.fft.fftshift(np.fft.fft(compsignal))
 freqs = np.fft.fftshift(np.fft.fftfreq(len(compsignal), t_diff[1]-t_diff[0]))
 
 #Speichern des Ergebnisses als txt
-np.savetxt("echo_gradient_fft.txt", np.array([freqs, np.real(fftdata), np.imag(fftdata)]).transpose())
+np.savetxt("build/echo_gradient_fft.txt", np.array([freqs, np.real(fftdata), np.imag(fftdata)]).transpose())
 
 #Zoom in den interessanten Bereich
 mask = freqs > -7200
@@ -243,7 +249,7 @@ def Fit(tau, M0, M1, a):
 
 #D = 3 * a/(gamma**2 * G**2)
 
-
+#get datapoints
 tau_D = np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) * 10**(-3)
 U_D = np.empty(29)
 
@@ -259,6 +265,9 @@ for i in range(0, 29):
 plt.plot(tau_D*1000, U_D, 'rx', label = 'Messwerte')
 
 slice_ = slice(None,None)
+
+#save datapoints
+np.savetxt("build/used_data_Diffusion.csv", np.array([tau_D, U_D]).transpose(), delimiter=",")
 
 #it took too long to actually figure out, so brute force it is. Conclusion: p0 = (1, 5, 0) works (even tho 0 causes true divide)
 #condition = True

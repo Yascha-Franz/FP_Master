@@ -91,7 +91,13 @@ dargestellt. Für die Parameter der Fit-Funktion ergeben sich die Werte
 \noindent Zur Berechnung der Diffusionskonstanten $D$ ist es erforderlich, die
 Gradientenfeldstärke zu kennen. Zur Berechnung dieser wird der Probendurchmesser
 $d = \SI{4.4}{\milli\meter}$ und der Probendurchmesser ausgedrückt durch eine
-Frequenz zu $d_f = \SI{15200}{\hertz}$ abgelesen. Über die Formel
+Frequenz zu $d_f = \SI{15200}{\hertz}$ aus der Fouriertransformation in Abbildung \ref{fig:d_f} abgelesen. 
+\begin{figure}
+  \includegraphics{build/echo_gradient.pdf}
+  \caption{Stark herangezoomte Fouriertransformation des Echos. Es wird hier nur der Peak der Fouriertransformation betrachtet und daraus der Frequenzdurchmesser $d_f = \SI{15200}{\hertz}$ bestimmt.}
+  \label{fig:d_f}
+\end{figure}
+Über die Formel
 \begin{align}
   G = \frac{2 \cdot \pi \cdot d_f}{\gamma \cdot d}
   \label{eqn:05}
