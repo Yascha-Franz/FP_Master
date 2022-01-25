@@ -14,7 +14,7 @@ verwendet.
 jeweiligen Pulsabständen $\tau$ gemessenen Spannungen, welche in Tabelle
 \ref{table:01} angegeben sind gemäß der Fit-Funktion
 \begin{align}
-  U(\tau) = M_0 \cdot \exp{\left(- \frac{\tau}{T_1}\right)} + M_1.
+  U(\tau) = M_0 \cdot \left(1 - 2\exp{\left(- \frac{\tau}{T_1}\right)}\right).
   \label{eqn:03}
 \end{align}
 \noindent Abbildung \ref{fig:01} zeigt die graphische Darstellung der Messwerte
@@ -22,9 +22,8 @@ inklusive Ausgleichsgerade. Die zu den längsten Pulsabständen gehörigen Werte
 wurden dabei nicht berücksichtigt, um eine bessere Fit-Funktion zu erreichen.
 Aus den aufgenommenen Werten lassen sich die Fitparameter
 \begin{align*}
-  M_0 &=  -(2.026  \pm  0.054) \: \si{\volt} \\
-  M_1 &=  (1.045 \pm  0.055) \: \si{\volt} \\
-  T_1 &=  (2.609  \pm  0.134) \: \si{\second}
+  M_0 &=  (0.9850  \pm  0.0076) \: \si{\volt} \\
+  T_1 &=  (2.470  \pm  0.040) \: \si{\second}
 \end{align*}
 \noindent bestimmen.
 \FloatBarrier
@@ -73,10 +72,10 @@ dargestellt. Für die Parameter der Fit-Funktion ergeben sich die Werte
 \subsection{Berechnung der Diffusionskonstanten $D$}
 \noindent Zur Berechnung der Diffusionskonstanten $D$ ist es erforderlich, die
 Gradientenfeldstärke zu kennen. Zur Berechnung dieser wird der Probendurchmesser
-$d = \SI{4.4}{\milli\meter}$ mit einer Frequenz von $d_f = \SI{15200}{\hertz}$, die aus der Fouriertransformation in Abbildung \ref{fig:d_f} abgelesen wird, verwendet. 
+$d = \SI{4.4}{\milli\meter}$ mit einer Frequenz von $d_f = \SI{14800}{\hertz}$, die aus der Fouriertransformation in Abbildung \ref{fig:d_f} abgelesen wird, verwendet. 
 \begin{figure}
   \includegraphics{build/echo_gradient.pdf}
-  \caption{Stark herangezoomte Fouriertransformation des Echos. Es wird hier nur der Peak der Fouriertransformation betrachtet und daraus der Frequenzdurchmesser $d_f = \SI{15200}{\hertz}$ bestimmt.}
+  \caption{Stark herangezoomte Fouriertransformation des Echos. Es wird hier nur der Peak der Fouriertransformation betrachtet und daraus der Frequenzdurchmesser $d_f = \SI{14800}{\hertz}$ bestimmt. Die vertikalen Linien kennzeichnen die $-7100\si{\hertz}$ und $7700\si{\hertz}$ Grenzen des Halbkreises.}
   \label{fig:d_f}
 \end{figure}
 Über die Formel

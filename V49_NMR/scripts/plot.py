@@ -60,23 +60,28 @@ tau_T1, U_T1 = np.genfromtxt("scripts/data/T1.csv", delimiter = ",", unpack = Tr
 tau_T1 /= 1000
 U_T1 /= 1000
 
-plt.plot(tau_T1, U_T1, 'k-'#, linewidth = '.3'
-                    , label = 'Volle Daten')
 
 #choose datapoints
-slice_ = slice(0,15)
+cutoff = 15
+slice_ = slice(0, cutoff)
+slice_exlcude = slice(cutoff, None)
 
 #save datapoints
 np.savetxt("build/used_data_T1.csv", np.array([tau_T1[slice_], U_T1[slice_]]).transpose(), delimiter=",")
 
 #plot datapoints
 plt.plot(tau_T1[slice_], U_T1[slice_], 'rx', label = 'Verwendete Werte')
+plt.plot(tau_T1[slice_exlcude], U_T1[slice_exlcude], 'kx'#, linewidth = '.3'
+                    , label = 'Nicht verwendete Daten')
 
 #fit datapoints
-def Fit(tau, M0, M1, T1):
-    return M0 * np.exp(-tau/T1) + M1
+#def Fit(tau, M0, M1, T1):
+#    return M0 * np.exp(-tau/T1) + M1
 
-params_T1, covariance_matrix = curve_fit(Fit, tau_T1[slice_], U_T1[slice_], p0=(-2, 1, 2))
+def Fit(tau, M0, T1):
+    return M0 * (1 - 2 * np.exp(-tau/T1))
+
+params_T1, covariance_matrix = curve_fit(Fit, tau_T1[slice_], U_T1[slice_], p0=(-2, 1))#, 2))
 errors_T1 = np.sqrt(np.diag(covariance_matrix))
 x_plot = np.linspace(np.min(tau_T1[slice_]), np.max(tau_T1[slice_]), 1000)
 plt.plot(x_plot, Fit(x_plot, *params_T1), 'b-', label='Fit')
@@ -95,14 +100,14 @@ plt.clf()
 
 print("T_1-Fit:")
 print("M_0 = ", params_T1[0], " \\pm ", errors_T1[0], '/V')
-print("M_1 = ", params_T1[1], " \\pm ", errors_T1[1], '/V')
-print("T_1 = ", params_T1[2], " \\pm ", errors_T1[2], '/s')
+#print("M_1 = ", params_T1[1], " \\pm ", errors_T1[1], '/V')
+print("T_1 = ", params_T1[1], " \\pm ", errors_T1[1], '/s')
 print()
 
 #T2
 t_T2, U_T2 = np.genfromtxt("scripts/data/T2_MG.csv", delimiter = ",", unpack = True, skip_header = 2)
 
-plt.plot(t_T2, U_T2, 'k-', linewidth = '.3', label = 'Volle Daten')
+plt.plot(t_T2[t_T2>-0.2], U_T2[t_T2>-0.2], 'k-', linewidth = '.3', label = 'Volle Daten')
 
 #choose datapoints
 slice_ = U_T2 > 100000
@@ -220,12 +225,13 @@ freqs = np.fft.fftshift(np.fft.fftfreq(len(compsignal), t_diff[1]-t_diff[0]))
 np.savetxt("build/echo_gradient_fft.txt", np.array([freqs, np.real(fftdata), np.imag(fftdata)]).transpose())
 
 #Zoom in den interessanten Bereich
-mask = freqs > -7200
-mask[freqs>8000] = False
-d_f = 15200
+mask = freqs > -8200        #-7100
+mask[freqs>9000] = False    #+7700
+d_f = 14800
 
 
 #Erstellen eines Plots
+plt.vlines([-7100, 7700], np.min(np.real(fftdata[mask])), np.max(np.real(fftdata[mask])))
 plt.plot(freqs[mask], np.real(fftdata[mask]))
 plt.xlabel(r'$f/\si{\hertz}$')
 plt.savefig("build/echo_gradient.pdf")
