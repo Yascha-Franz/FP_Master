@@ -17,7 +17,7 @@ auf einem Detektor zusammenlaufen. \\
 \FloatBarrier
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{resources/fig_01.pdf}
+  \includegraphics[scale=0.5]{resources/fig_01.png}
   \caption{Schematischer Aufbau eines Sagnac-Interferometers \cite{sample}}
   \label{fig:01}
 \end{figure}
@@ -95,3 +95,51 @@ für trigonometrische Funktionen nach Gleichung \ref{eqn:01} einen Kontrast
 \end{align*}
 \noindent wobei die Maximal- und Minimalwerte nach Gleichung \ref{eqn:06}
 bestimmt werden.
+\subsection{Brechungsindex von Glas}
+\noindent Mithilfe der Anzahl der Interferenzmaxima bzw. Interfernzminima, die
+bei der Drehung des Glases durchlaufen werden, lässt sich der Brechungsindex des
+Glases bestimmen. Die Anzahl $M$ der Interferenzextrema lässt sich dabei über die
+Gleichung
+\begin{align}
+  M = \frac{\Delta \varphi}{2 \pi}
+  \label{eqn:07}
+\end{align}
+\noindent bestimmen. Im experimentellen Aufbau werden zwei Glasplättchen von den
+Laserstrahlen durchquert. Die Glasplättchen besitzen jeweils eine Dicke $T$ und
+sind im Winkel $Theta_0 = \pm \SI{10}{\degree}$ gegeneinander verkippt. Die
+Gleichung für eine einzelne planparallele Platte
+\begin{align}
+  \Delta \varphi = \frac{2 \pi}{\lambda} \cdot T \cdot \left(\frac{n-1}{2n} \cdot \Theta^2 + O(\Theta^4)  \right)
+  \label{eqn:08}
+\end{align}
+\noindent ist daher noch um die Verkippung zu modifizieren. Werden
+Effekte höherer Ordnung, die sich bei der Taylor-Entwicklung in Gleichung
+\ref{eqn:08} zeigen vernachlässigt, lässt sich diese schreiben als
+\begin{align}
+  \Delta \varphi = \frac{2 \pi}{\lambda} \cdot T \cdot \left(\frac{n-1}{2n} \cdot \Theta^2  \right).
+  \label{eqn:09}
+\end{align}
+\noindent Zusammen mit Gleichung \ref{eqn:07} lässt sich daraus die Relation
+\begin{align}
+  M = \frac{T}{\lambda} \cdot \left( \frac{n-1}{2n} \cdot \Theta^2  \right).
+  \label{eqn:10}
+\end{align}
+\subsection{Brechungsindex von Gasen}
+\noindent Neben optisch transparenten Medien wie beispielsweise Glas erfahren
+Lichtstrahlen auch in Bereichen verschiedener Umgebungsdrücke Brechung.
+Innerhalb der Gaszelle erfährt ein Lichtstrahl eine Phasenverschiebung
+\begin{align}
+  \Delta \varphi = \frac{2 \pi}{\lambda} \cdot (n - 1) \cdot L,
+  \label{eqn:11}
+\end{align}
+\noindent wobei $L$ der Länge der Gaszelle entspricht. Unter Berücksichtigung
+von Gleichung \ref{eqn:07} ergibt sich daraus der Zusammenhang
+\begin{align}
+  M = \frac{n-1}{\lambda} \cdot L,
+  \label{eqn:12}
+\end{align}
+\noindent bzw. aufgelöst nach dem Brechungsindex $n$
+\begin{align}
+  n = \frac{M \cdot \lambda}{L} + 1
+  \label{eqn:13}
+\end{align}
