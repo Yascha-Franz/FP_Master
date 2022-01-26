@@ -9,9 +9,9 @@ else
 endif
 
 all: build/finish.pdf
-plot: build/plot.pdf
+plot: build/photopeak.pdf
 
-build/finish.pdf: build/plot.pdf content/aufbau.tex content/auswertung.tex content/diskussion.tex content/durchfuehrung.tex finish.tex header.tex content/theorie.tex title.tex content/ergebnisse.tex| build
+build/finish.pdf: build/photopeak.pdf content/aufbau.tex content/auswertung.tex content/diskussion.tex content/durchfuehrung.tex finish.tex header.tex content/theorie.tex title.tex content/ergebnisse.tex| build
 	TEXINPUTS="$(call translate,build:)" \
 	BIBINPUTS="$(call translate,$(pwd):)" \
 	latexmk \
@@ -21,7 +21,7 @@ build/finish.pdf: build/plot.pdf content/aufbau.tex content/auswertung.tex conte
 	--halt-on-error \
 	finish.tex
 
-build/plot.pdf: scripts/plot.py scripts/data.txt | build
+build/photopeak.pdf: scripts/plot.py scripts/data.txt | build
 	TEXINPUTS="$(call translate,$(pwd):)" python scripts/plot.py
 
 build:
