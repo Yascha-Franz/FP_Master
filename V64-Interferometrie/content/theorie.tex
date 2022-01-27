@@ -51,13 +51,13 @@ und Energie der Lichtwelle für konstante Bestrahlungsstärken vereinfachen zu
 \end{align}
 \noindent wobei $E$ die Energie der Lichtwelle beschreibt. Für
 \begin{align}
-  E(\theta, t) = E_0 \cdot \cos(\theta - \omega t)
+  E(\Theta, t) = E_0 \cdot \cos(\Theta - \omega t)
   \label{eqn:03}
 \end{align}
 \noindent gilt nach Anwendung des Additionstheorems für Differenzen innerhalb der
 Kosinusfunktion
 \begin{align}
-  E(\theta, t) = E_0 \cdot \left[\cos(\theta) \cos(\omega t) + \sin(\theta) \sin(\omega t) \right].
+  E(\Theta, t) = E_0 \cdot \left[\cos(\Theta) \cos(\omega t) + \sin(\Theta) \sin(\omega t) \right].
   \label{eqn:04}
 \end{align}
 \noindent Durch Wahl einer Phasenverschiebung $\Delta \varphi$ lässt sich
@@ -65,7 +65,7 @@ $\sin(\omega t)$ umschreiben zu $\cos(\omega t + \varphi)$. Für die Intensität
 des interferierenden Laserlichts gilt für die Energien $E_1$ und $E_2$ damit
 der Zusammenhang
 \begin{align}
-  I = \langle | E_1 \cdot \cos(\theta) \cos(\omega t) + E_2 \cdot \sin(\theta) \sin(\omega t) |^2 \rangle.
+  I = \langle | E_1 \cdot \cos(\Theta) \cos(\omega t) + E_2 \cdot \sin(\Theta) \sin(\omega t) |^2 \rangle.
   \label{eqn:05}
 \end{align}
 \noindent Aus Gleichung \ref{eqn:05} lässt sich daher auch eine Bedingung für
@@ -83,22 +83,23 @@ Subtraktion gleich großer Energien, abhängig vpn der Phasenverschiebung $\Delt
 \noindent erforderlich \cite{hecht}. Damit lässt sich für Interferenzmaxima und
 Interferenzminima Gleichung \ref{eqn:05} schreiben als
 \begin{align}
-  I_{\frac{\text{max.}}{\text{min.}}} \propto I_\text{Laser} \left[1 \pm 2 \cdot \cos(\theta) \sin(\theta) \right].
+  I_{\frac{\text{max.}}{\text{min.}}} \propto I_\text{Laser} \left[1 \pm 2 \cdot \cos(\Theta) \sin(\Theta) \right].
   \label{eqn:06}
 \end{align}
 \noindent Der Faktor $I_\text{Laser}$ beschreibt dabei die mittlere
 Ausgangsintensität des Lasers und es gilt $I_\text{Laser} \propto (E_1 + E_2)^2$.
 Für den Kontrast bedeutet dies unter Berücksichtigung eines Additionstheorems
 für trigonometrische Funktionen nach Gleichung \ref{eqn:01} einen Kontrast
-\begin{align*}
-  K \propto \sin(2 \theta),
-\end{align*}
+\begin{align}
+  K \propto | \sin(2 \Theta) |,
+  \label{eqn:01b}
+\end{align}
 \noindent wobei die Maximal- und Minimalwerte nach Gleichung \ref{eqn:06}
 bestimmt werden.
 \subsection{Brechungsindex von Glas}
 \noindent Mithilfe der Anzahl der Interferenzmaxima bzw. Interfernzminima, die
 bei der Drehung des Glases durchlaufen werden, lässt sich der Brechungsindex des
-Glases bestimmen. Die Anzahl $M$ der Interferenzextrema lässt sich dabei über die
+Glases bestimmen. Die Anzahl $M$ der Interferenzmaxima lässt sich dabei über die
 Gleichung
 \begin{align}
   M = \frac{\Delta \varphi}{2 \pi}
@@ -106,7 +107,7 @@ Gleichung
 \end{align}
 \noindent bestimmen. Im experimentellen Aufbau werden zwei Glasplättchen von den
 Laserstrahlen durchquert. Die Glasplättchen besitzen jeweils eine Dicke $T$ und
-sind im Winkel $Theta_0 = \pm \SI{10}{\degree}$ gegeneinander verkippt. Die
+sind im Winkel $\alpha = \pm \SI{10}{\degree}$ gegeneinander verkippt. Die
 Gleichung für eine einzelne planparallele Platte
 \begin{align}
   \Delta \varphi = \frac{2 \pi}{\lambda} \cdot T \cdot \left(\frac{n-1}{2n} \cdot \Theta^2 + O(\Theta^4)  \right)
