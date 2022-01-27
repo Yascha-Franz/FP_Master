@@ -108,9 +108,10 @@ run_Glas, M_glas = np.genfromtxt('scripts/data/data_counts.txt', unpack=True)
 lam = 632.99 * 10**(-9)
 T = 20.5 + 273.15
 Theta_0 = 10/360 * 2 * cst.pi
+d = 0.001
 
 def n_Glas_(M):
-    return 1/(1- M * lam/(2 * T * Theta_0 **2))
+    return 1/(1- M * lam/(2 * d * Theta_0 **2))
 
 n_Glas = n_Glas_(M_glas)
 
