@@ -89,7 +89,7 @@ x_plot = np.linspace(np.min(phi), np.max(phi), 1000)
 plt.plot(x_plot, Fit(x_plot, *params_K), 'b-', label='Fit')
 
 
-plt.xlabel(r'$\phi/°$')
+plt.xlabel(r'$\Theta/°$')
 plt.ylabel(r'$K/1$')
 plt.legend(loc = 'best')
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
