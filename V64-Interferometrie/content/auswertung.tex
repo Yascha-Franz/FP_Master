@@ -37,8 +37,16 @@ $K \approx 1$ gilt. Die Kontrastwerte sind in Abbildung \ref{fig:02} dargestellt
   \label{fig:02}
 \end{figure}
 \FloatBarrier
-\noindent Der Verlauf der Ausgleichskurve in Abbiuldung \ref{fig:02} zeigt dabei
-deutlich die Form der Sinus-Betragsfunktion \ref{eqn:01b}. \\
+\noindent Die Ausgleichskurve in Abbildung \ref{fig:02} ist nach Gleichung \ref{eqn:K_Theta} gefittet mit den Parametern
+\begin{align}
+  K_0    &= 0.858 \pm 0.015\\
+  \delta &= (-5.3 \pm 1.1)°.
+\end{align}
+$K_0$ ist hierbei eine Korrektur um die endlich gute Justage zu berücksichtigen.
+Der Verlauf zeigt dabei deutlich die Form der Sinus-Betragsfunktion \ref{eqn:01b}. \\
+\begin{equation}
+  K(\Theta) = K_0 \left| \text{sin}(\Theta + \delta) \right| \label{eqn:K_Theta}
+\end{equation}
 \noindent Der zum maximalen Kontrast gehören daher die Werte
 \begin{align*}
   K_\text{max.} \approx \num{0.88} \\
@@ -49,19 +57,18 @@ deutlich die Form der Sinus-Betragsfunktion \ref{eqn:01b}. \\
 Durchgängen die Anzahl $n$ der bei der Drehung des Doppelglashalters durchlaufenen
 Intensitätsmaxima gezählt. Diese sind in Tabelle \ref{tabular_02} dargelegt.
 Der Drehwinkel des Doppelglashalters beträgt dabei in jedem Durchgang $\alpha =
-\SI{10}{degree}$. \\
+\SI{10}{\degree}$. \\
 \FloatBarrier
 \input{resources/table_02.tex}
 \FloatBarrier
 \noindent Für die gemessene Anzahl an Intensitätsmaxima während der Drehung
-lässt sich mithilfe der Gleichung
+lässt sich die Gleichung \ref{eqn:M_modifiziert} zu
 \begin{align}
   n_\text{Glas} = \frac{1}{1 - \frac{m \cdot \lambda}{2 \cdot \Theta_0^2}},
   \label{eqn:14}
 \end{align}
-\noindent wobei $\Theta_0$ dem Winkel $\alpha$ im Bogenmaß entspricht und
-$\lambda$ der Wellenlänge des He-Ne-Lasers. Mithilfe der Anzahl der
-Intensitätsmaxima $M$ lassen sich über Gleichung \ref{eqn:14} die
+\noindent umformen. Mithilfe der Anzahl der
+Intensitätsmaxima $M$ lassen sich dann über Gleichung \ref{eqn:14} die
 Brechungsindizes der einzelnen Messungen bestimmen. Diese sind in Tabelle
 \ref{tabular_03} dargestellt. \\
 \FloatBarrier
@@ -70,7 +77,7 @@ Brechungsindizes der einzelnen Messungen bestimmen. Diese sind in Tabelle
 \noindent Gemittelt über die berechneten Brechungsindizes von Glas aus Tabelle
 \ref{tabular_03} gilt für den Brechungsindex von Glas
 \begin{align}
-  n_\text{Glas} = 1 +  1.2843674679352546e-06  \pm  4.760170620035104e-08.
+  n_\text{Glas} = 1 +  0.606  \pm  0.036.
 \end{align}
 \subsection{Brechungsindex von Gasen}
 \noindent Für die Untersuchung des Brechungsindexes von Gasen ergeben sich in
@@ -80,16 +87,16 @@ aufgeführten Messwerte. \\
 \input{resources/table_04.tex}
 \FloatBarrier
 \noindent Aus den in Tabelle \ref{tabular_04} aufgeführten Messwerten lassen sich
-die Brechungsindizes der verschiedenen Messungen mithilfe linearer Ausgleichsrechnung
-bestimmen. Gemäß Gleichung \ref{eqn:13} lassen sich die Brechungsindizes für
-jede Anzahl an Intensitätsmaxima bestimmen. Abbildung \ref{fig:03} zeigt die
-zugehörigen Ausgleichsgeraden. \\
+die Brechungsindizes der verschiedenen Messungen und Gleichung \ref{eqn:13}
+lassen sich die Brechungsindizes für die Anzahl an Intensitätsmaxima bestimmen.
+Nach Gleichung \ref{eqn:Lorentz-Lorenz} hat das Quadrat des Brechungsindexes eine lineare Beziehung zum Druck
+und Abbildung \ref{fig:03} zeigt die zugehörigen Ausgleichsgerade. \\
 \FloatBarrier
 \begin{figure}
   \centering
   \includegraphics{build/plot_n_Gas.pdf}
   \caption{Quadrate der berechneten Brechungsindizes $n$ für verschiedene Drücke
-  $p$ innerhalb der Gasröhre}
+  $p$ innerhalb der Gasröhre.}
   \label{fig:03}
 \end{figure}
 \FloatBarrier
@@ -100,12 +107,12 @@ zugehörigen Ausgleichsgeraden. \\
 wobei sich für die verschiedenen Kurven die Steigungen $m$ und Ordinatenabschnitte
 $b$ bestimmen lassen zu
 \begin{align*}
-  m_1 &= 5.35969743e-07 \pm 9.99978798e-01, \\
-  m_2 &= 5.39205999e-07 \pm 9.99976466e-01, \\
-  m_3 &= 5.47393386e-07 \pm 9.99972801e-01, \\
-  b_1 &= 3.20641925e-09 \pm 1.92050688e-06, \\
-  b_2 &= 3.17203888e-09 \pm 1.89991349e-06, \\
-  b_3 &= 2.90235414e-09 \pm 1.73835215e-06 \\
+  m_1 &= (5.3596 \pm 0.032)e-07, \\
+  m_2 &= (5.3921 \pm 0.032)e-07, \\
+  m_3 &= (5.4739 \pm 0.029)e-07, \\
+  b_1 &= 0.99997 + (8.8 \pm 1.9)e-06, \\
+  b_2 &= 0.99997 + (6.5 \pm 1.9)e-06, \\
+  b_3 &= 0.99997 + (2.8 \pm 1.7)e-06 \\
 \end{align*}
 %
 %
@@ -114,7 +121,7 @@ $b$ bestimmen lassen zu
 \noindent Daraus ergeben sich für die jeweiligen Messungen für den Brechungsindex
 von Luft
 \begin{align}
-  n_1 &= 1.0097618404605855  \pm  1.9041222260301724e-06, \\
-  n_2 &= 1.0097623179763553  \pm  1.8837043946012876e-06, \\
-  n_3 &= 1.0097646536970344  \pm  1.7235408615137845e-06 \\
+  n_1 &= 1 + (2.658 \pm 0.019)e-04, \\
+  n_2 &= 1 + (2.663 \pm 0.019)e-04, \\
+  n_3 &= 1 + (2.687 \pm 0.017)e-04 \\
 \end{align}

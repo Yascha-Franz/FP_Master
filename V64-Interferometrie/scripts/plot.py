@@ -97,6 +97,8 @@ plt.savefig('build/plot_K.pdf')
 plt.clf()
 
 print("Kontrast")
+print("Fit-Parameter (K_0, \delta):")
+print(params_K, " \pm ", errors_K)
 print("Maximaler Kontrast: ", np.max(K))
 print("Winkel des maximalen Kontrasts: ", phi[np.argmax(K)])
 print("")
