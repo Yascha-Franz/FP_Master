@@ -72,7 +72,7 @@ dargestellt. Für die Parameter der Fit-Funktion ergeben sich die Werte
 \subsection{Berechnung der Diffusionskonstanten $D$}
 \noindent Zur Berechnung der Diffusionskonstanten $D$ ist es erforderlich, die
 Gradientenfeldstärke zu kennen. Zur Berechnung dieser wird der Probendurchmesser
-$d = \SI{4.4}{\milli\meter}$ mit einer Frequenz von $d_f = \SI{14800}{\hertz}$, die aus der Fouriertransformation in Abbildung \ref{fig:d_f} abgelesen wird, verwendet. 
+$d = \SI{4.4}{\milli\meter}$ mit einem Frequenzbereich von $d_f = \SI{14800}{\hertz}$, die aus der Fouriertransformation in Abbildung \ref{fig:d_f} abgelesen wird, verwendet. 
 \begin{figure}
   \includegraphics{build/echo_gradient.pdf}
   \caption{Stark herangezoomte Fouriertransformation des Echos. Es wird hier nur der Peak der Fouriertransformation betrachtet und daraus der Frequenzdurchmesser $d_f = \SI{14800}{\hertz}$ bestimmt. Die vertikalen Linien kennzeichnen die $-7100\si{\hertz}$ und $7700\si{\hertz}$ Grenzen des Halbkreises.}
@@ -86,9 +86,18 @@ $d = \SI{4.4}{\milli\meter}$ mit einer Frequenz von $d_f = \SI{14800}{\hertz}$, 
 \noindent berechnet sich die Gradientenfeldstärke unter Beachtung des
 gyromagnetischen Verhältnisses eines Protons $\gamma \approx \num{268e6} \:
 \text{rad}(\si{\second\tesla})^{-1}$ zu
-$G = \num{0.081} {\si{\tesla}}{\si{\meter}^{-1}}$. \\
-\noindent Um daraus die Diffusionskonstante $D$ berechnen zu können, ist die
-Relaxationszeit $T_D$ zu berechnen. Die Messungen der über mehrere
+$G = \num{0.079} {\si{\tesla}}{\si{\meter}^{-1}}$. \\
+\noindent Um die Diffusionskonstante $D$ bestimmen zu können, wird der Parameter
+\begin{equation}
+  a = T_D \tau^2
+\end{equation}
+eingeführt um die $\tau$-Abhängigkeit aus der Gleichung \label{diffusion_constant} loszuwerden.
+Es ergibt sich die modifizierte Gleichung
+\begin{equation}
+  D = \frac{3a}{\gamma^2 G^2}.
+  \label{eqn:diffusion_modifiziert}
+\end{equation}
+Die Messungen der über mehrere
 Größenordnungen variierenden Pulsabstände lassen sich durch eine Funktion
 \begin{align}
   M(\tau) = M_0 \cdot \exp{\left(- \frac{2 \cdot \tau}{T_2}\right)} \cdot \exp{\left(- \frac{2 \cdot \tau^3}{a}\right)} + M_1
@@ -113,19 +122,17 @@ graphisch veranschaulicht. Dabei ergeben sich die Parameter
 \FloatBarrier
 \input{resources/table_02.tex}
 \FloatBarrier
-\noindent Die Relaxationszeit $T_D$ lässt sich dann berechnen über
-$T_D = \frac{a}{\tau^3}$, um daraus schließlich Rückschlüsse auf die
-Diffusionskonstante zu generieren. Es gilt
+\noindent Es gilt dann nach Gleicung \ref{eqn:diffusion_modifiziert}
 \begin{align*}
-  D = (2.006e-09 \pm 3.660e-11) \frac{\si{\meter^2}}{\si{\second}}.
+  D = (2.116 \pm 0.037)e-09 \frac{\si{\meter^2}}{\si{\second}}.
 \end{align*}
 \noindent Aus der Einstein-Stokes-Gleichung \ref{eqn:02} kann daraus unter Verwendung der
 Parameter $T = \SI{293.75}{\kelvin}$ (gemessen) und $\eta = \SI{10e-3}{\pascal\second}$
 \cite{Viskosität_Wasser} der Molekülradius zu
 \begin{align*}
- r = (1.073\pm 1.957e{-2}) \text{\r{A}}
+ r = \frac{k_B \cdot T}{6 \cdot \pi \cdot \eta \cdot D} = (1.017\pm 0.019) \text{\r{A}}
 \end{align*}
-\noindent bestimmen. Als Vergleichswert lässt sich aus der Gleichung
+\noindent bestimmen. Ein Vergleichswert lässt sich aus der Gleichung
 \begin{align}
   r = \sqrt[3]{\frac{3 \cdot M}{\rho \cdot N_A \cdot 4 \cdot \pi}}
   \label{eqn:07}

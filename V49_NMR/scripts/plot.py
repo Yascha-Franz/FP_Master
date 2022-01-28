@@ -72,7 +72,7 @@ np.savetxt("build/used_data_T1.csv", np.array([tau_T1[slice_], U_T1[slice_]]).tr
 #plot datapoints
 plt.plot(tau_T1[slice_], U_T1[slice_], 'rx', label = 'Verwendete Werte')
 plt.plot(tau_T1[slice_exlcude], U_T1[slice_exlcude], 'kx'#, linewidth = '.3'
-                    , label = 'Nicht verwendete Daten')
+                    , label = 'Nicht verwendete Werte')
 
 #fit datapoints
 #def Fit(tau, M0, M1, T1):
@@ -312,7 +312,7 @@ print("a = ",   params_D[2], " \\pm ", errors_D[2], '/s^3')
 a = unp.uarray(params_D[2], errors_D[2])
 
 #T_D = a/tau**2
-#D = T_D * 3 / (gamma * G * tau)**2
+#D =  3 /(T_D * (gamma * G * tau)**2)
 D = 3 * 1/(a * (gamma * 2 * cst.pi * G)**2)
 print("")
 print("Dispersion")
