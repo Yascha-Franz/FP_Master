@@ -8,7 +8,9 @@ und die Gaußsche Fehlerfortpflanzung
   u_y = \sqrt{\sum_{i=1}^n\left(\frac{\delta y}{\delta x_i}u_x\right)^2}
   \label{eqn:gauß}
 \end{equation}
-verwendet.
+verwendet, die Auswertung erfolgt mithilfe der Programme matplotlib
+\cite{matplotlib}, NumPy \cite{numpy}, SciPy \cite{scipy} und Uncertainties
+\cite{uncertainties}. 
 \subsection{Messung der Spin-Gitter Relaxationszeit}
 \noindent Die Spin-Gitter Relaxationszeit berechnet sich aus den zu den
 jeweiligen Pulsabständen $\tau$ gemessenen Spannungen, welche in Tabelle
@@ -37,10 +39,10 @@ Aus den aufgenommenen Werten lassen sich die Fitparameter
   \label{fig:01}
 \end{figure}
 \FloatBarrier
-\noindent Die Spin-Gitter-Relaxationszeit liegt damit bei etwa
-\begin{align*}
-  T_1 &=  (2.609  \pm  0.134) \: \si{\second}.
-\end{align*}
+% \noindent Die Spin-Gitter-Relaxationszeit liegt damit bei etwa
+% \begin{align*}
+%   T_1 &=  (2.609  \pm  0.134) \: \si{\second}.
+% \end{align*}
 \subsection{Messung der Spin-Spin Relaxationszeit}
 \noindent analog zu Gleichung \ref{eqn:03} lässt sich eine Gleichung
 \begin{align}
@@ -72,7 +74,7 @@ dargestellt. Für die Parameter der Fit-Funktion ergeben sich die Werte
 \subsection{Berechnung der Diffusionskonstanten $D$}
 \noindent Zur Berechnung der Diffusionskonstanten $D$ ist es erforderlich, die
 Gradientenfeldstärke zu kennen. Zur Berechnung dieser wird der Probendurchmesser
-$d = \SI{4.4}{\milli\meter}$ mit einem Frequenzbereich von $d_f = \SI{14800}{\hertz}$, die aus der Fouriertransformation in Abbildung \ref{fig:d_f} abgelesen wird, verwendet. 
+$d = \SI{4.4}{\milli\meter}$ mit einem Frequenzbereich von $d_f = \SI{14800}{\hertz}$, die aus der Fouriertransformation in Abbildung \ref{fig:d_f} abgelesen wird, verwendet.
 \begin{figure}
   \includegraphics{build/echo_gradient.pdf}
   \caption{Stark herangezoomte Fouriertransformation des Echos. Es wird hier nur der Peak der Fouriertransformation betrachtet und daraus der Frequenzdurchmesser $d_f = \SI{14800}{\hertz}$ bestimmt. Die vertikalen Linien kennzeichnen die $-7100\si{\hertz}$ und $7700\si{\hertz}$ Grenzen des Halbkreises.}
