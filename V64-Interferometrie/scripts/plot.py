@@ -141,7 +141,7 @@ def n_Gas_p(p, a, b): #quadriert
 M_Gas = np.array([M_Gas_1, M_Gas_2, M_Gas_3])
 n_Gas = n_Gas_(M_Gas)
 
-plt.xlabel(r'$p/\si{\milli\bar}$')
+plt.xlabel(r'$p/\text{mbar}$')
 plt.ylabel(r'$n^2$')
 params, errors = plotfit(np.array([p, p, p]), n_Gas**2, n_Gas_p, 'build/plot_n_Gas.pdf', label = np.array(["Run 1", "Run 2", "Run 3"]), fitlabel = np.array(["Fit 1", "Fit 2", "Fit 3"]))
 
