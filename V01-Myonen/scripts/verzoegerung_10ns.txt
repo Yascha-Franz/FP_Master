@@ -1,0 +1,10 @@
+# time in ns,  counts_left,  counts_right,  integration_time: 10s
+0       238       238
+1       239       218
+1.5     243       243
+2       219       230
+4       215       200
+6       173       168
+8       116       125
+10      89        89
+12      43        41
