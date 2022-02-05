@@ -9,9 +9,9 @@ else
 endif
 
 all: build/finish.pdf
-plot: build/plot.pdf
+plot: build/koinzidenz_10ns.pdf
 
-build/finish.pdf: build/plot.pdf content/aufbau.tex content/auswertung.tex content/diskussion.tex content/durchfuehrung.tex finish.tex header.tex content/theorie.tex title.tex content/ergebnisse.tex| build
+build/finish.pdf: build/koinzidenz_10ns.pdf content/aufbau.tex content/auswertung.tex content/diskussion.tex content/durchfuehrung.tex finish.tex header.tex content/theorie.tex title.tex content/ergebnisse.tex| build
 	TEXINPUTS="$(call translate,build:)" \
 	BIBINPUTS="$(call translate,$(pwd):)" \
 	latexmk \
@@ -21,7 +21,7 @@ build/finish.pdf: build/plot.pdf content/aufbau.tex content/auswertung.tex conte
 	--halt-on-error \
 	finish.tex
 
-build/plot.pdf: scripts/plot.py scripts/data.txt | build
+build/koinzidenz_10ns.pdf: scripts/plot.py scripts/pulsabstaende.txt scripts/verzoegerung_10ns.txt scripts/verzoegerung_20ns.txt | build
 	TEXINPUTS="$(call translate,$(pwd):)" python scripts/plot.py
 
 build:
@@ -30,4 +30,4 @@ build:
 clean:
 	rm -rf build
 
-.PHONY: all clean
+.PHONY: all clean plot
