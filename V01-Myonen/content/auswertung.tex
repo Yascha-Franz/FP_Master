@@ -33,7 +33,7 @@ und Abbildung \ref{fig:05} dargestellt.
 \FloatBarrier
 \begin{figure}
   \centering
-  \includegraphics{bulid/koinzidenz_10ns.pdf}
+  \includegraphics{build/koinzidenz_10ns.pdf}
   \caption{Messwerte der Zeitverzögerung bei einer Referenzverzögerungszeit $\SI{10}{\nano\second}$.}
   \label{fig:04}
 \end{figure}
@@ -41,7 +41,7 @@ und Abbildung \ref{fig:05} dargestellt.
 \FloatBarrier
 \begin{figure}
   \centering
-  \includegraphics{bulid/koinzidenz_20ns.pdf}
+  \includegraphics{build/koinzidenz_20ns.pdf}
   \caption{Messwerte der Zeitverzögerung bei einer Referenzverzögerungszeit $\SI{20}{\nano\second}$.}
   \label{fig:05}
 \end{figure}
@@ -53,26 +53,77 @@ besitzen dabei die Form
   \label{eqn:08}
 \end{align}
 \noindent die Parameter für die Referenzverzögerungszeit $\SI{10}{\nano\second}$
-(siehe Abbildung \ref{fig:05}) lauten
+(siehe Abbildung \ref{fig:04}) lauten
 \begin{align*}
-  m_\text{links}   &= \num{(20.85 \pm 1.93)} \si{\nano\second^{-1}} \\
-  b_\text{links}   &= \num{(292.90 \pm 17.98)} \\
-  m_\text{Plateau} &= \num{0} \\
-  b_\text{Plateau} &= \num{(230.63 \pm 11.01)} \\
-  m_\text{rechts}  &= \num{(-19.85 \pm 0.73)} \si{\nano\second^{-1}} \\
-  b_\text{rechts}  &= \num{(283.40 \pm 6.21)}. \\
+  m_\text{links}   &= {(20.85 \pm 1.93)} \si{\nano\second^{-1}} \\
+  b_\text{links}   &= {(292.90 \pm 17.98)} \\
+  m_\text{Plateau} &= {0} \\
+  b_\text{Plateau} &= {(230.63 \pm 11.01)} \\
+  m_\text{rechts}  &= {(-19.85 \pm 0.73)} \si{\nano\second^{-1}} \\
+  b_\text{rechts}  &= {(283.40 \pm 6.21)}. \\
 \end{align*}
-\noindent Analog lassen sich mit Gleichung \ref{fig:08} die Parameter
+\noindent Analog lassen sich mit Gleichung \ref{eqn:08} die Parameter
 für die Referenzverzögerungszeit $\SI{10}{\nano\second}$
-(siehe Abbildung \ref{fig:06}) bestimmen zu
+(siehe Abbildung \ref{fig:05}) bestimmen zu
 \begin{align*}
-  m_\text{links}   &= \num{(15.45 \pm 1.67)} \si{\nano\second^{-1}} \\
-  b_\text{links}   &= \num{(377.60 \pm 33.65)} \\
-  m_\text{Plateau} &= \num{0} \\
-  b_\text{Plateau} &= \num{(207.0 \pm 20.14)} \\
-  m_\text{rechts}  &= \num{(-16.85 \pm 1.50)} \si{\nano\second^{-1}} \\
-  b_\text{rechts}  &= \num{(436.10 \pm 31.73)}. \\
+  m_\text{links}   &= {(15.45 \pm 1.67)} \si{\nano\second^{-1}} \\
+  b_\text{links}   &= {(377.60 \pm 33.65)} \\
+  m_\text{Plateau} &= {0} \\
+  b_\text{Plateau} &= {(207.0 \pm 20.14)} \\
+  m_\text{rechts}  &= {(-16.85 \pm 1.50)} \si{\nano\second^{-1}} \\
+  b_\text{rechts}  &= {(436.10 \pm 31.73)}. \\
 \end{align*}
 \noindent Die genäherten Plateaus entsprechen dabei den Verzögerungszeiten, für
 welche eine maximale Zählrate gemessen werden kann. Daher wird eine
-Verzögerungszeit gewählt, für welche 
+Verzögerungszeit gewählt, für welche einer der Plateauwerte erreicht wird. \\
+\newline
+\noindent Die Zuordnung der Impulse zu den jeweiligen Channels, in denen sie
+registriert werden, erfolgt auf Basis der in Tabelle \ref{tabular_03} dargestellten
+Messwerte. \\
+\FloatBarrier
+\input{resources/table_03.tex}
+\FloatBarrier
+\noindent Aus den in Tabelle \ref{tabular_03} angegebenen Frequenzwerten und den
+zugehörigen Zählraten lässt sich die in Abbildung \ref{fig:06} dargestellte
+lineare Ausgleichsfunktion darstellen. Diese ist ebenfalls vom in Gleichung
+\ref{eqn:08} dargestellten Funktionstyp und besitzt die Ausgleichsparameter
+\begin{align*}
+  m_\text{Kal.} &= (0.02 \pm 1.6 \cdot 10{-5}) \frac{\si{\micro\second}}{\text{Channel}}  \qquad \text{und}\\
+  b_\text{Kal.} &= (0.15 \pm 0.004) \si{\micro\second}.
+\end{align*}
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics{build/Zeit_Channel_Kalibration.pdf}
+  \caption{Pulsdauern in Abhängigkeit vom Registrationschannel.}
+  \label{fig:06}
+\end{figure}
+\FloatBarrier
+\noindent Um die Lebensdauer der kosmischen Myonen zu bestimmen, ist es
+erforderlich, von der Gesamtzählrate der Myonen den Untergrund zu subtrahieren.
+Der Untergrund entspricht dabei einer Poissonverteilung mit einer
+Zerfallskonstanten $\lambda$ bestehend aus dem Produkt der Ereignisrate und der
+Messzeit und lässt sich als Wahrscheinlichkeit interpretieren, zwei Myonen
+innerhalb des für einen Zerfall zu erwartenden Zeitraumes zu detektieren. Der
+lineare Untergrund ist in Abbildung \ref{fig:07} dargestellt.  \\
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics{build/Myonenuntergrund.pdf}
+  \caption{Aus der Poissonverteilung für eine Anzahl $n = 9530546$ ermittelte
+  Untergrundrate detektierter Myonen}
+  \label{fig:07}
+\end{figure}
+\FloatBarrier
+\noindent Mithilfe des Untergrundes lässt sich anschließend die Lebensdauer der
+kosmischen Myonen bestimmen. Das Gesamtspektrum ist mit bilanzierten Untergrund
+in Abbildung \ref{fig:08} dargestellt. \\
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics{build/Gesamtspektrum.pdf}
+  \caption{Exponentielle Abnahme der Zählraten kosmischer Myonen in Abhängigkeit
+  von der Zerfallszeit.}
+  \label{fig:08}
+\end{figure}
+\FloatBarrier
