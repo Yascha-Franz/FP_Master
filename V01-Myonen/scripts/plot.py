@@ -207,7 +207,7 @@ plt.xlabel(r'$t_{decay}/\si{\micro\second}$')
 plt.ylabel('Counts')
 #plt.step(t_decay, Untergrund_Zusammen, label='Untergrund')
 plt.step(t_decay, Untergrund, label='Untergrund')
-plt.vlines(1/event_rate, ymin=0, ymax=0.2)
+#plt.vlines(1/event_rate, ymin=0, ymax=0.2)
 
 plt.legend(loc='best')
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
