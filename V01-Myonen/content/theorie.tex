@@ -117,4 +117,45 @@ schließen, in welchem keine Signale registriert werden. \\
 \noindent Ist die Zeitspanne zwischen den Signalen deutlich kürzer, ist ein
 Myonenzerfall wahrscheinlich. Ein Photon im Szintillator wird dabei vom Myon
 erzeugt, ein weiteres vom Elektron (bzw. Positron), welches beim Myonenzerfall
-entsteht. Zu registrieren gilt es daher diese Zeitspanne. \\
+entsteht. Zur Bestimmung der Lebensdauer kosmischer Myonen ist daher diese
+Zeitspanne relevant. \\
+\subsubsection{Signalverarbeitung}
+\noindent Durch Verwendung einer Koinzidenzschaltung wird erreicht, dass
+Ausgangssignale nur dann verarbeitet werden, wenn die Signale der Photomultiplier
+zeitgleich eingehen. Auf diese Weise lässt sich sicherstellen, dass Myonen nicht
+doppelt gezählt werden. Im Fall eines detektierten Myons wird
+eine Art Stoppuhr betätigt, die in einem vorgegebenen Zeitintervall, eingestellt
+am Monoflop, nach Zerfallssignalen sucht \cite{anleitung}. \\
+\subsubsection{Lebensdauer kosmischer Myonen}
+\noindent Zerfallen Myonen oder andere geladene Teilchen, so wandeln sie sich in
+andere Teilchen um, denn ihre pysikalische Eigenschaften wie beispielsweise die
+Leptonenzahl bleiben erhalten. Zerfälle lassen sich daher als Umwandlungsprozesse
+betrachten. Als Wahrscheinlichkeit von Umwandlungen lässt sich das Verhältnis
+zwischen der Anzahl $N_0$ der ursprünglich betrachteten Teilchen zur Anzahl
+$dN$ der erhaltenen Teilchen innerhalb des Zeitintervalls $dt$
+bestimmen. Es gilt
+\begin{align}
+  dW = \frac{dN}{N_0}.
+  \label{eqn:04}
+\end{align}
+\noindent Diese Wahrscheinlichkeit lässt sich mithilfe der Übergangsrate
+$\lambda$ schreiben als
+\begin{align}
+  dW = \lambda \cdot dt.
+  \label{eqn:05}
+\end{align}
+\noindent Werden die Gleichungen \ref{eqn:04} und \ref{eqn:05} miteinander
+gleichgesetzt, ergibt sich der Zusammenhang
+\begin{align}
+  \frac{dN}{N_0} = \lambda \cdot dt \qquad \implies \frac{N(t)}{N_0} = \exp{-\lambda \cdot t}
+  \label{eqn:06}
+\end{align}
+\noindent welcher für große Teilchenanzahlen $N$ dem Zerfallsgesetz entspricht.
+Aus der Übergangsrate $\lambda$, die in diesem Zusammenhang auch als
+Zerfallskonstante bezeichnet wird, lässt sich anschließend die mittlere
+Lebensdauer $\tau$ der Teilchen nach \cite{teilchen} durch zeitliche Integration
+bestimmen zu
+\begin{align}
+  \tau = \frac{1}{\lambda}
+  \label{eqn:07}
+\end{align}

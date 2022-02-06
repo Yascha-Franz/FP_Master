@@ -1,4 +1,4 @@
-Für die Fehlerrechung wird die empirische Standartabweichung
+\noindent Für die Fehlerrechung wird die empirische Standardabweichung
 \begin{equation}
   \sigma = \sqrt{\frac{1}{n-1} \cdot \sum_{i=1}^n(x_i-\overline{x})^2}
   \label{eqn:Stdabweichung}
@@ -8,10 +8,71 @@ und die Gaußsche Fehlerfortpflanzung
   u_y = \sqrt{\sum_{i=1}^n\left(\frac{\delta y}{\delta x_i}u_x\right)^2}
   \label{eqn:gauß}
 \end{equation}
-verwendet.
+verwendet. Zur Auswertung werden verschiedene Programme wie matplotlib
+\cite{matplotlib}, NumPy \cite{numpy}, SciPy \cite{scipy} und Uncertainties
+\cite{uncertainties} hinzugezogen. \\
+\newline
+\noindent Um zu gewährleisten, dass die Ereignisse simultan verarbeitet werden
+können, ist es erforderlich, die Verzögerungen der PMT-Signale so zu wählen, dass
+sie simultan an der Koinzidenzapparatur verarbeitet werden können. Hierzu werden
+die für zwei Justagedurchgänge durchgeführt, in denen je eine Verzögerungszeit
+festgehalten wird. Die Messwerte sind für je zwei verschiedene Flanken in den
+Tabellen \ref{tabular_01} und Tabelle \ref{tabular_02} aufgeführt. \\
+\FloatBarrier
+\input{resources/table_01.tex}
+\FloatBarrier
+\FloatBarrier
+\input{resources/table_02.tex}
+\FloatBarrier
+\noindent Die gemessenen Werte lassen sich dabei flankenweise betrachten. Das
+bedeutet, dass die Messwerte der linken Flanke negativen Zeitverzögerungswerten
+zugeordnet werden, die auf der rechten Seite dementsprechend den positiven
+Zeitverzögerungswerten. Zusätzlich zeigen beide Messungen eine Plateaubildung.
+Graphische Veranschaulichungen der Messwerte sind in den Abbildungen \ref{fig:04}
+und Abbildung \ref{fig:05} dargestellt.
+\FloatBarrier
 \begin{figure}
   \centering
-  \includegraphics{build/plot.pdf}
-  \caption{Plot}
-  \label{fig:plot}
+  \includegraphics{bulid/koinzidenz_10ns.pdf}
+  \caption{Messwerte der Zeitverzögerung bei einer Referenzverzögerungszeit $\SI{10}{\nano\second}$.}
+  \label{fig:04}
 \end{figure}
+\FloatBarrier
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics{bulid/koinzidenz_20ns.pdf}
+  \caption{Messwerte der Zeitverzögerung bei einer Referenzverzögerungszeit $\SI{20}{\nano\second}$.}
+  \label{fig:05}
+\end{figure}
+\FloatBarrier
+\noindent Die Ausgleichsgeraden für die Flanken und die jeweiligen Plateaus
+besitzen dabei die Form
+\begin{align}
+  f(x) = m \cdot x + b,
+  \label{eqn:08}
+\end{align}
+\noindent die Parameter für die Referenzverzögerungszeit $\SI{10}{\nano\second}$
+(siehe Abbildung \ref{fig:05}) lauten
+\begin{align*}
+  m_\text{links}   &= \num{(20.85 \pm 1.93)} \si{\nano\second^{-1}} \\
+  b_\text{links}   &= \num{(292.90 \pm 17.98)} \\
+  m_\text{Plateau} &= \num{0} \\
+  b_\text{Plateau} &= \num{(230.63 \pm 11.01)} \\
+  m_\text{rechts}  &= \num{(-19.85 \pm 0.73)} \si{\nano\second^{-1}} \\
+  b_\text{rechts}  &= \num{(283.40 \pm 6.21)}. \\
+\end{align*}
+\noindent Analog lassen sich mit Gleichung \ref{fig:08} die Parameter
+für die Referenzverzögerungszeit $\SI{10}{\nano\second}$
+(siehe Abbildung \ref{fig:06}) bestimmen zu
+\begin{align*}
+  m_\text{links}   &= \num{(15.45 \pm 1.67)} \si{\nano\second^{-1}} \\
+  b_\text{links}   &= \num{(377.60 \pm 33.65)} \\
+  m_\text{Plateau} &= \num{0} \\
+  b_\text{Plateau} &= \num{(207.0 \pm 20.14)} \\
+  m_\text{rechts}  &= \num{(-16.85 \pm 1.50)} \si{\nano\second^{-1}} \\
+  b_\text{rechts}  &= \num{(436.10 \pm 31.73)}. \\
+\end{align*}
+\noindent Die genäherten Plateaus entsprechen dabei den Verzögerungszeiten, für
+welche eine maximale Zählrate gemessen werden kann. Daher wird eine
+Verzögerungszeit gewählt, für welche 

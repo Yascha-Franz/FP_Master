@@ -1,7 +1,31 @@
-\begin{figure}[H]
-  \centering
-    \begin{tikzpicture}
-    \end{tikzpicture}
-  \caption{Skizze des Versuchsaufbaus}
-  \label{fig:aufbau}
-\end{figure}
+\noindent Im Wesentlichen besteht der Versuchsaufbau aus einem Szintillatortank
+mit einem Volumen $V = \SI{50}{\liter}$ und zwei angeflanschten PMTs, sowie
+einem Rack mit verschiedenen elektrischen Bauteilen zur Signalverarbeitung. Zu
+diesen Geräten gehören Verzögerungsleitungen (verschieden lange Kabelverbindungen
+mit Verzögerunsgleistungen im Bereich einiger Nanosekunden), Diskriminatoren
+zur Festlegung von Schwellspannungen, einem Doppelimpulsgenerator, einer
+Koinzidenzschaltung, Impulszählgeräten, einem Monoflop, einem
+Time-Amplitude-Converter (TAC) sowie einem Multi-Channel-Analyzer (MCA), dessen
+Signale von einem PC ausgewertet werden. Zusätzlich steht ein Oszilloskop bereit.
+Die Bauelemente sind alle in Abbildung \ref{fig:02} aufgeführt.  \\
+\newline
+\noindent Die Ausgängssignale der Photomultiplier sind über
+Verzögerungsleitungen mit Diskriminatoren verbunden und werden anschließend an
+eine Koinzidenzschaltung weitergeleitet. Diese ist ebenfalls mit einem
+Doppelimpulsgenerator verbunden. Die Koinzidenzschaltung leitet lediglich im
+Falle eines simultanen Signaleingangs der Signale zweier PMT ein Signal weiter,
+zu Kalibrierungszwecken kann der Doppelimpulsgenerator das erforderliche zweite
+Eingangssignal geben. \\
+\noindent Am Anschluss an die Koinzidenzschaltung folgen zwei AND-Gitter, wovon
+eines direkt, ein zweites erst nach einer weiteren Verzögerungsleitung und einem
+Monoflip vom Signal erreicht wird. Der Monoflip dient dabei einer Eingrenzung
+der Suchzeit, innerhalb welcher die Myonzerfälle zu erwarten sind. Die
+Verzögerungsleitung soll eine Verzögerungszeit $\Delta t = \SI{30}{\nano\second}$
+gewährleisten. Die beiden AND-Gitter, die ein Signal jeweils aus der
+Koinzidenzschaltung direkt beziehen, erhalten ihr zweites Signal aus dem
+Monoflop. Dieser erhält sein Signal um die Zeitspanne $\Delta t$ zeitversetzt.
+Wird er getriggert, sperrt er für die Suchzeit $T_s$ das Startsignal am ersten
+AND-Gitter und gibt es nach der Suchzeit wieder frei. Ein Signaleingang
+innerhalb der Suchzeit hingegen schaltet ein Stopp-Signal. Die Start und
+Stop-Signale werden jeweils einzeln gezählt, die Signalverarbeitung geschieht
+über den TAC und den MCA am PC \cite{anleitung}.   
