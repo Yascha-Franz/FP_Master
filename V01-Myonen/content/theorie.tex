@@ -122,8 +122,7 @@ Zeitspanne relevant. \\
 \subsubsection{Signalverarbeitung}
 \noindent Durch Verwendung einer Koinzidenzschaltung wird erreicht, dass
 Ausgangssignale nur dann verarbeitet werden, wenn die Signale der Photomultiplier
-zeitgleich eingehen. Auf diese Weise lässt sich sicherstellen, dass Myonen nicht
-doppelt gezählt werden. Im Fall eines detektierten Myons wird
+zeitgleich eingehen. Auf diese Weise lässt sich sicherstellen, nur Signale zu zählen, die von Myonen erzeugt wurden und thermische Elektron-signale werden verworfen. Im Fall eines detektierten Myons wird
 eine Art Stoppuhr betätigt, die in einem vorgegebenen Zeitintervall, eingestellt
 am Monoflop, nach Zerfallssignalen sucht \cite{anleitung}. \\
 \subsubsection{Lebensdauer kosmischer Myonen}
@@ -147,7 +146,7 @@ $\lambda$ schreiben als
 \noindent Werden die Gleichungen \ref{eqn:04} und \ref{eqn:05} miteinander
 gleichgesetzt, ergibt sich der Zusammenhang
 \begin{align}
-  \frac{dN}{N_0} = \lambda \cdot dt \qquad \implies \frac{N(t)}{N_0} = \exp{-\lambda \cdot t}
+  \frac{dN}{N_0} = \lambda \cdot dt \qquad \implies \frac{N(t)}{N_0} = \exp{(-\lambda \cdot t)}
   \label{eqn:06}
 \end{align}
 \noindent welcher für große Teilchenanzahlen $N$ dem Zerfallsgesetz entspricht.

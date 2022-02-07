@@ -46,18 +46,18 @@ und Abbildung \ref{fig:05} dargestellt.
   \label{fig:05}
 \end{figure}
 \FloatBarrier
-\noindent Die Ausgleichsgeraden für die Flanken und die jeweiligen Plateaus
+\noindent Die Ausgleichsgeraden für die Flanken
 besitzen dabei die Form
 \begin{align}
-  f(x) = m \cdot x + b,
+  f(x) = m \cdot x + b
   \label{eqn:08}
 \end{align}
-\noindent die Parameter für die Referenzverzögerungszeit $\SI{10}{\nano\second}$
+\noindent  und die jeweiligen Plateaus werden über den empirischen Mittelwert bestimmt.
+\noindent Die Parameter für die Referenzverzögerungszeit $\SI{10}{\nano\second}$
 (siehe Abbildung \ref{fig:04}) lauten
 \begin{align*}
   m_\text{links}   &= {(20.85 \pm 1.93)} \si{\nano\second^{-1}} \\
-  b_\text{links}   &= {(292.90 \pm 17.98)} \\
-  m_\text{Plateau} &= {0} \\
+  b_\text{links}   &= {(292.90 \pm 17.98)} \\\\
   b_\text{Plateau} &= {(230.63 \pm 11.01)} \\
   m_\text{rechts}  &= {(-19.85 \pm 0.73)} \si{\nano\second^{-1}} \\
   b_\text{rechts}  &= {(283.40 \pm 6.21)}. \\
@@ -67,8 +67,7 @@ für die Referenzverzögerungszeit $\SI{10}{\nano\second}$
 (siehe Abbildung \ref{fig:05}) bestimmen zu
 \begin{align*}
   m_\text{links}   &= {(15.45 \pm 1.67)} \si{\nano\second^{-1}} \\
-  b_\text{links}   &= {(377.60 \pm 33.65)} \\
-  m_\text{Plateau} &= {0} \\
+  b_\text{links}   &= {(377.60 \pm 33.65)} \\\\
   b_\text{Plateau} &= {(207.0 \pm 20.14)} \\
   m_\text{rechts}  &= {(-16.85 \pm 1.50)} \si{\nano\second^{-1}} \\
   b_\text{rechts}  &= {(436.10 \pm 31.73)}. \\
@@ -101,11 +100,14 @@ lineare Ausgleichsfunktion darstellen. Diese ist ebenfalls vom in Gleichung
 \FloatBarrier
 \noindent Um die Lebensdauer der kosmischen Myonen zu bestimmen, ist es
 erforderlich, von der Gesamtzählrate der Myonen den Untergrund zu subtrahieren.
-Der Untergrund entspricht dabei einer Poissonverteilung mit einer
-Zerfallskonstanten $\lambda$ bestehend aus dem Produkt der Ereignisrate und der
-Messzeit und lässt sich als Wahrscheinlichkeit interpretieren, zwei Myonen
-innerhalb des für einen Zerfall zu erwartenden Zeitraumes zu detektieren. Der
-lineare Untergrund ist in Abbildung \ref{fig:07} dargestellt.  \\
+Der Untergrund entspricht dabei einer Poissonverteilung
+\begin{equation}
+  N(t) = N_0 \cdot P_{\text{Poisson}}(t)
+\end{equation}
+mit einer
+Zerfallskonstanten $\lambda = r \cdot t$ bestehend aus dem Produkt der gesamten gemessenen Rate an Startereignissen $r = 9530546 \text{counts}/266036 \si{\second}$ und der
+dem Channel zugeordneten Zeit $t$ und lässt sich als Wahrscheinlichkeit interpretieren, zwei Myonen
+innerhalb des für einen Zerfall zu erwartenden Zeitraumes zu detektieren. Der Untergrund pro Channel ist in Abbildung \ref{fig:07} dargestellt.  \\
 \FloatBarrier
 \begin{figure}
   \centering
