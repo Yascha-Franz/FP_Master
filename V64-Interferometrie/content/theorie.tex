@@ -28,7 +28,7 @@ der Lichtweg hier nicht mechanisch durch Veränderung der Positionen der
 Umlenkspiegel erreicht, sondern durch eine räumliche Trennung der parallel
 verlaufenden Strahlen, von denen ein Strahl durch ein brechendes Medium geführt
 wird. Der genaue Strahlengang durch das Sagnac-Interferometer wird im Abschnitt
-\ref{durchfuehrung} beschrieben. Dadurch dass das Licht in gegenläufigen
+\ref{durchfuehrung} beschrieben. Dadurch, dass das Licht in gegenläufigen
 Richtungen exakt die gleichen Bauteile passiert, ist das Sagnac-Interferometer
 weniger anfällig gegenüber mechanischen Störungen als andere Interferometer. Wird
 einer der Spiegel bewegt, so zeichnet sich diese Bewegung in allen Teilstrahlen
@@ -41,23 +41,23 @@ sich über die Gleichung
   K = \frac{I_\text{max.}- I_\text{min.}}{I_\text{max.} + I_\text{min.}}
   \label{eqn:01}
 \end{align}
-\noindent und wird nähert sich dem Kontrastmaximum, je schwächer das
+\noindent und nähert sich dem Kontrastmaximum, je schwächer das
 Intensitätsminimum ist. \\
 \noindent Allgemein lässt sich der Zusammenhang zwischen Strahlungsintensität
 und Energie der Lichtwelle für konstante Bestrahlungsstärken vereinfachen zu
 \begin{align}
-  I = \langle E^2 \rangle,
+  I = \langle \textbf{E}^2 \rangle,
   \label{eqn:02}
 \end{align}
-\noindent wobei $E$ die Energie der Lichtwelle beschreibt. Für
+\noindent wobei $\textbf{E}$ die Energie der Lichtwelle beschreibt. Für
 \begin{align}
-  E(\Theta, t) = E_0 \cdot \cos(\Theta - \omega t)
+  \textbf{E}(\Theta, t) = \textbf{E}_0 \cdot \cos(\Theta - \omega t)
   \label{eqn:03}
 \end{align}
 \noindent gilt nach Anwendung des Additionstheorems für Differenzen innerhalb der
 Kosinusfunktion
 \begin{align}
-  E(\Theta, t) = E_0 \cdot \left[\cos(\Theta) \cos(\omega t) + \sin(\Theta) \sin(\omega t) \right].
+  \textbf{E}(\Theta, t) = \textbf{E}_0 \cdot \left[\cos(\Theta) \cos(\omega t) + \sin(\Theta) \sin(\omega t) \right].
   \label{eqn:04}
 \end{align}
 \noindent Durch eine Phasenverschiebung $\Delta \varphi$ lässt sich
@@ -65,7 +65,7 @@ $\sin(\omega t)$ umschreiben zu $\cos(\omega t + \Delta \varphi)$. Für die Inte
 des interferierenden Laserlichts gilt für die Energien $E_1$ und $E_2$ damit
 der Zusammenhang
 \begin{align}
-  I = \langle | E_1 \cdot \cos(\Theta) \cos(\omega t) + E_2 \cdot \sin(\Theta) \sin(\omega t) |^2 \rangle.
+  I = \langle | \textbf{E}_1 \cdot \cos(\Theta) \cos(\omega t) + \textbf{E}_2 \cdot \sin(\Theta) \sin(\omega t) |^2 \rangle.
   \label{eqn:05}
 \end{align}
 \noindent Aus Gleichung \ref{eqn:05} lässt sich daher auch eine Bedingung für
@@ -87,9 +87,14 @@ Interferenzminima Gleichung \ref{eqn:05} schreiben als
   \label{eqn:06}
 \end{align}
 \noindent Der Faktor $I_\text{Laser}$ beschreibt dabei die mittlere
-Ausgangsintensität des Lasers und es gilt $I_\text{Laser} \propto (E_1 + E_2)^2$.
-Für den Kontrast bedeutet dies unter Berücksichtigung eines Additionstheorems
-für trigonometrische Funktionen nach Gleichung \ref{eqn:01} einen Kontrast
+Ausgangsintensität des Lasers und es gilt $I_\text{Laser} \propto (\textbf{E}_1 + \textbf{E}_2)^2$.
+Für den Kontrast bedeutet dies unter Berücksichtigung eines Additionstheorems für
+Doppelwinkelfunktionen gemäß
+\begin{align}
+  2 \cdot \sin(\Theta) \cdot \cos(\Theta) = \sin(2 \Theta)
+  \label{eqn:01aa}
+\end{align}
+nach Gleichung \ref{eqn:01} einen Kontrast
 \begin{align}
   K \propto | \sin(2 \Theta) |,
   \label{eqn:01b}
@@ -122,10 +127,10 @@ Effekte höherer Ordnung, die sich bei der Taylor-Entwicklung in Gleichung
 \end{align}
 \noindent Zusammen mit Gleichung \ref{eqn:07} lässt sich daraus die Relation
 \begin{align}
-  M = \frac{T}{\lambda} \cdot \left( \frac{n-1}{2n} \cdot \Theta^2  \right).
+  M = \frac{T}{\lambda} \cdot \left( \frac{n-1}{2n} \cdot \Theta^2  \right)
   \label{eqn:10}
 \end{align}
-Bei den zwei verkippten Glasplättchen ergibt sich die Relation
+herleiten. Bei den zwei verkippten Glasplättchen ergibt sich die Relation
 \begin{equation}
   M = \frac{T}{\lambda} \cdot \frac{n-1}{n} \cdot (\Theta \alpha_1 - \Theta \alpha_2).
 \end{equation}

@@ -102,6 +102,7 @@ print(params_K, " \pm ", errors_K)
 print("Maximaler Kontrast: ", np.max(K))
 print("Winkel des maximalen Kontrasts: ", phi[np.argmax(K)])
 print("")
+print('U_min =', U_min, ' U_max =', U_max, 'K =', K)
 
 #Glas
 

@@ -20,8 +20,8 @@ quantifizieren. Um diesen zu ermitteln, wird der initiale Polarisationsfilter
 in einem Intervall $\Theta \in [\SI{345}{\degree}, \SI{195}{\degree}]$
 in Schritten von je $\theta = \SI{15}{\degree}$ gedreht und die Spannungsmaxima
 gemessen. Die Messwerte sind in Tabelle \ref{tabular_01} dargelegt. In den
-Bereichen um Winkel, an denen der Kontrast besonders auffällig ist, werden
-zusätzliche Messungen durchgeführt. \\
+Bereichen um Winkel, an denen der Kontrast besonders nahe dem Idealwert $K= 1$
+liegt, werden zusätzliche Messungen durchgeführt. \\
 \FloatBarrier
 \input{resources/table_01.tex}
 \FloatBarrier
@@ -64,7 +64,7 @@ Der Drehwinkel des Doppelglashalters beträgt dabei in jedem Durchgang $\alpha =
 \noindent Für die gemessene Anzahl an Intensitätsmaxima während der Drehung
 lässt sich die Gleichung \ref{eqn:M_modifiziert} zu
 \begin{align}
-  n_\text{Glas} = \frac{1}{1 - \frac{m \cdot \lambda}{2 \cdot \Theta_0^2}},
+  n_\text{Glas} = \frac{1}{1 - \frac{m \cdot \lambda}{2 \cdot d \cdot \Theta_0^2}},
   \label{eqn:14}
 \end{align}
 \noindent umformen. Mithilfe der Anzahl der
@@ -100,7 +100,8 @@ und Abbildung \ref{fig:03} zeigt die zugehörigen Ausgleichsgerade. \\
   \label{fig:03}
 \end{figure}
 \FloatBarrier
-\noindent Die linearen Ausgleichsgeraden folgen dabei der Form
+\noindent Die linearen Ausgleichsgeraden der quadrierten Brechungsindizes $n$,
+angetragen gegen den Druck in der Gasdruckröhre folgen dabei der Form
 \begin{align}
   f(x) = m \cdot x + b,
 \end{align}
@@ -119,9 +120,10 @@ $b$ bestimmen lassen zu
 %
 %
 \noindent Daraus ergeben sich für die jeweiligen Messungen für den Brechungsindex
-von Luft
+von Luft bei einer Temperatur von $T \SI{15}{\celsius}$ und einem Druck von
+$p = \num{1013}\:\text{mbar}$
 \begin{align}
   n_1 &= 1 + (2.658 \pm 0.019)e-04, \\
   n_2 &= 1 + (2.663 \pm 0.019)e-04, \\
-  n_3 &= 1 + (2.687 \pm 0.017)e-04 \\
+  n_3 &= 1 + (2.687 \pm 0.017)e-04. \\
 \end{align}
